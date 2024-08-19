@@ -688,7 +688,7 @@
 			         
       function load_echarts(proto) {    
         //检测token
-        CoreUtil.sendAjax(URL_LIST, CoreUtil.encode_str("get",JSON.stringify(""),0), function (res) {
+        CoreUtil.sendAjax(URL_LIST, CoreUtil.encode_str("get",JSON.stringify(""),0,"GET"), function (res) {
          	  if (res.xdata2 != null && res.ydata1 != null && res.ydata2 != null && res.ydata5 != null) {
          	      xdata1 =  res.xdata1;
          	      xdata2 =  res.xdata2;
