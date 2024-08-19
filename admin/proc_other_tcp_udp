@@ -1,0 +1,75 @@
+{
+ "id":1,
+ "result":[{
+  "ip":"169.254.0.83",
+  "proto":"UDP",
+  "filename":"other_udp_3195764901.pcap",
+  "geoip":"IANA保留地址",
+  "tx_bytes":"42180",
+  "num":"555",
+  "date":"2024-08-19",
+  "risk":"--"
+},{
+  "ip":"183.60.83.19",
+  "proto":"UDP",
+  "filename":"other_udp_3195764901.pcap",
+  "geoip":"广东省江门市",
+  "tx_bytes":"3640",
+  "num":"52",
+  "date":"2024-08-19",
+  "risk":"--"
+},{
+  "ip":"169.254.0.79",
+  "proto":"UDP",
+  "filename":"other_udp_3195764901.pcap",
+  "geoip":"IANA保留地址",
+  "tx_bytes":"42180",
+  "num":"555",
+  "date":"2024-08-19",
+  "risk":"--"
+},{
+  "ip":"169.254.0.82",
+  "proto":"UDP",
+  "filename":"other_udp_3195764901.pcap",
+  "geoip":"IANA保留地址",
+  "tx_bytes":"42180",
+  "num":"555",
+  "date":"2024-08-19",
+  "risk":"--"
+},{
+  "ip":"169.254.0.81",
+  "proto":"UDP",
+  "filename":"other_udp_3195764901.pcap",
+  "geoip":"IANA保留地址",
+  "tx_bytes":"42180",
+  "num":"555",
+  "date":"2024-08-19",
+  "risk":"--"
+},{
+  "ip":"183.60.82.98",
+  "proto":"UDP",
+  "filename":"other_udp_3195764901.pcap",
+  "geoip":"广东省江门市",
+  "tx_bytes":"3640",
+  "num":"52",
+  "date":"2024-08-19",
+  "risk":"--"
+},{
+  "ip":"169.254.0.80",
+  "proto":"UDP",
+  "filename":"other_udp_3195764901.pcap",
+  "geoip":"IANA保留地址",
+  "tx_bytes":"42180",
+  "num":"555",
+  "date":"2024-08-19",
+  "risk":"--"
+}],
+"totalRows":0,
+"tcp":"9",
+"udp":"9",
+"icmp":"1",
+"date":"2024-08-19",
+"proc_date":"2024-08-19",
+"k_drv":"0",
+"error_code":"0"
+}

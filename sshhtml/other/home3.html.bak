@@ -306,8 +306,8 @@
 		    var laydate = layui.laydate;
 			       
         
-        var URL_LIST = "/pages/admin/proc_week?token=" + CoreUtil.getStok("token") + 	'&time=' + Date.parse(new Date()) / 1000;
-        var URL_FILTER = "/pages/admin/filter_atklog?token=" + CoreUtil.getStok("token") + 	'&time=' + Date.parse(new Date()) / 1000; 
+        var URL_LIST = "/admin/proc_week?token=" + CoreUtil.getStok("token") + 	'&time=' + Date.parse(new Date()) / 1000;
+        var URL_FILTER = "/admin/filter_atklog?token=" + CoreUtil.getStok("token") + 	'&time=' + Date.parse(new Date()) / 1000; 
         var xdata1 = [];
         var xdata2 = []; 
         var ydata1 = [];
@@ -479,7 +479,7 @@
 					    };
 					}, 
 					page: false,
-					url: "/pages/admin/proc_ip?" + proto + 'token=' + CoreUtil.getStok("token") + 	'&time=' + Date.parse(new Date()) / 1000,
+					url: "/admin/proc_ip?" + proto + 'token=' + CoreUtil.getStok("token") + 	'&time=' + Date.parse(new Date()) / 1000,
 					cols: [[
 					{
 						type: "numbers",
@@ -559,7 +559,7 @@
 			 }   
 			
 			 function load_tcp(myelem) {     
-			  var URL_TAB = "/pages/admin/proc_tab"  + myelem +	"?token=" + CoreUtil.getStok("token") + '&time=' + Date.parse(new Date());     
+			  var URL_TAB = "/admin/proc_tab"  + myelem +	"?token=" + CoreUtil.getStok("token") + '&time=' + Date.parse(new Date());     
 
 			           /* 渲染表格 */
         var insTb = table.render({
@@ -621,7 +621,7 @@
 			 }			 
 			 
 			 function load_udp_icmp(myelem) {     
-			  var URL_TAB = "/pages/admin/proc_tab"  + myelem +	"?token=" + CoreUtil.getStok("token") + '&time=' + Date.parse(new Date());     
+			  var URL_TAB = "/admin/proc_tab"  + myelem +	"?token=" + CoreUtil.getStok("token") + '&time=' + Date.parse(new Date());     
 
 			           /* 渲染表格 */
         var insTb = table.render({
@@ -719,7 +719,7 @@
          	  
          	  if (res.k_drv != null && res.k_drv == "0") { 
          	  	
-         	  	        var URL_DRV = "/pages/admin/drvstatus?token=" + CoreUtil.getStok("token");
+         	  	        var URL_DRV = "/admin/drvstatus?token=" + CoreUtil.getStok("token");
 							        CoreUtil.sendAjax(URL_DRV,null,function (res) {
 							            if(res.result != null){                 	
 							                if(res.result.kdrv =="0" && res.result.drv =="0"){ 
@@ -1026,7 +1026,7 @@
 					    };
 					}, 
 					cellMinWidth: 100,
-					url: "/pages/admin/proc_ip?token="  + token + 	"&time=" + Date.parse(new Date()) / 1000 ,
+					url: "/admin/proc_ip?token="  + token + 	"&time=" + Date.parse(new Date()) / 1000 ,
 					cols: [[
 					{
 						type: "numbers",

@@ -1,0 +1,61 @@
+{
+ "id":1,
+ "result":[{
+  "procname":"/usr/local/qcloud/monitor/python26/bin/python",
+  "filename":"python_hfwdns_1582444699.pcap",
+  "dns":"time3.tencentyun.com",
+  "count":"1110",
+  "risk":"--",
+  "note":"--"
+},{
+  "procname":"/usr/local/qcloud/monitor/python26/bin/python",
+  "filename":"python_hfwdns_1582444699.pcap",
+  "dns":"time4.tencentyun.com",
+  "count":"1110",
+  "risk":"--",
+  "note":"--"
+},{
+  "procname":"/usr/local/qcloud/monitor/python26/bin/python",
+  "filename":"python_hfwdns_1582444699.pcap",
+  "dns":"time5.tencentyun.com",
+  "count":"1110",
+  "risk":"--",
+  "note":"--"
+},{
+  "procname":"/usr/local/qcloud/monitor/python26/bin/python",
+  "filename":"python_hfwdns_1582444699.pcap",
+  "dns":"time1.tencentyun.com",
+  "count":"1110",
+  "risk":"--",
+  "note":"--"
+},{
+  "procname":"/usr/local/qcloud/monitor/python26/bin/python",
+  "filename":"python_hfwdns_1582444699.pcap",
+  "dns":"time2.tencentyun.com",
+  "count":"1110",
+  "risk":"--",
+  "note":"--"
+},{
+  "procname":"/usr/local/qcloud/stargate/bin/sgagent64",
+  "filename":"sgagent64_hfwdns_3909906838.pcap",
+  "dns":"update2.agent.tencentyun.com",
+  "count":"111",
+  "risk":"--",
+  "note":"--"
+},{
+  "procname":"other_udp",
+  "filename":"other_udp_hfwdns_1240257770.pcap",
+  "dns":"invoke.tat-tc.tencent.cn",
+  "count":"104",
+  "risk":"--",
+  "note":"--"
+}],
+"totalRows":7,
+"tcp":"9",
+"udp":"9",
+"icmp":"1",
+"date":"2024-08-19",
+"proc_date":"2024-08-19",
+"k_drv":"0",
+"error_code":"0"
+}

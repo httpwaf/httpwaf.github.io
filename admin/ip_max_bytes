@@ -1,12 +1,14 @@
 {
  "code":0,
   "msg": "",
-  "result":{"syn":"90","bytes_in":"6","bytes_out":"50","packets_in":"5357","packets_out":"19432"},
+  "result":{"syn":"104","bytes_in":"73","bytes_out":"42","packets_in":"151736","packets_out":"128281"},
  "test":[],
 "totalRows":0,
-"tcp":"0",
-"udp":"0",
-"icmp":"0",
-"date":"2023-06-14",
+"tcp":"18",
+"udp":"6",
+"icmp":"2",
+"date":"2024-08-19",
+"proc_date":"2024-08-19",
+"k_drv":"0",
 "error_code":"0"
 }

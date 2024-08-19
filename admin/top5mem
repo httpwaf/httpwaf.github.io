@@ -1,32 +1,32 @@
 {
  "id":1,
  "result":[{
+  "procname":"/usr/lib/systemd/systemd-journald",
+  "cpu":"0.0",
+  "mem":"6.9",
+  "memkb":"129780"
+},{
+  "procname":"/usr/local/qcloud/YunJing/YDEyes/YDService",
+  "cpu":"0.0",
+  "mem":"3.5",
+  "memkb":"65000"
+},{
   "procname":"/hihttps/bin/webserver",
   "cpu":"0.0",
-  "mem":"2.5",
-  "memkb":"47176"
+  "mem":"3.2",
+  "memkb":"59684"
 },{
-  "procname":"/hissh/bin/log2save",
+  "procname":"/usr/local/qcloud/monitor/python26/bin/python",
   "cpu":"0.0",
-  "mem":"2.1",
-  "memkb":"39740"
-},{
-  "procname":"/hihttps/bin/hihttps",
-  "cpu":"0.0",
-  "mem":"1.5",
-  "memkb":"28436"
+  "mem":"2.3",
+  "memkb":"42984"
 },{
   "procname":"/hihttps/bin/logcenter",
   "cpu":"0.0",
-  "mem":"1.3",
-  "memkb":"24028"
-},{
-  "procname":"/hissh/bin/hisshfw",
-  "cpu":"0.0",
-  "mem":"1.1",
-  "memkb":"21448"
+  "mem":"2.1",
+  "memkb":"39704"
 }],
 "totalRows":5,
-"date":"2023-06-12",
+"date":"2024-08-18",
 "error_code":"0"
 }

@@ -1,7 +1,32 @@
 {
  "id":1,
- "result":[],
-"totalRows":0,
-"date":"2023-06-14",
+ "result":[{
+  "procname":"/usr/sbin/sshd",
+  "port":"22",
+  "rx_bytes":"1193643",
+  "tx_bytes":"1690280"
+},{
+  "procname":"/hihttps/bin/hihttps",
+  "port":"80",
+  "rx_bytes":"30391",
+  "tx_bytes":"951675"
+},{
+  "procname":"/hihttps/bin/hihttps",
+  "port":"443",
+  "rx_bytes":"20965",
+  "tx_bytes":"93395"
+},{
+  "procname":"/hihttps/bin/webserver",
+  "port":"9999",
+  "rx_bytes":"850",
+  "tx_bytes":"17421"
+},{
+  "procname":"/hiproc/bin/web2httpd",
+  "port":"9998",
+  "rx_bytes":"6369",
+  "tx_bytes":"56942"
+}],
+"totalRows":5,
+"date":"2024-08-18",
 "error_code":"0"
 }

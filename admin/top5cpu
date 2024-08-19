@@ -2,21 +2,16 @@
  "id":1,
  "result":[{
   "procname":"/hiproc/bin/prochfw",
-  "cpu":"1.0",
-  "mem":"1.1",
-  "memkb":"21444"
+  "cpu":"2.0",
+  "mem":"1.3",
+  "memkb":"24916"
 },{
-  "procname":"/usr/libexec/openssh/sftp-server",
+  "procname":"/usr/local/qcloud/YunJing/YDLive/YDLive",
   "cpu":"1.0",
-  "mem":"0.5",
-  "memkb":"8620"
-},{
-  "procname":"/usr/sbin/sshd",
-  "cpu":"1.0",
-  "mem":"0.9",
-  "memkb":"17024"
+  "mem":"1.0",
+  "memkb":"19764"
 }],
-"totalRows":3,
-"date":"2023-06-12",
+"totalRows":2,
+"date":"2024-08-18",
 "error_code":"0"
 }
