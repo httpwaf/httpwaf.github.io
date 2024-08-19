@@ -1,0 +1,9 @@
+{
+	"id": 1,
+	"others": {
+		"max_num_per_rule": 200,
+		"max_rules": 32
+	},
+	"result": [{"name":"","textname":"hihttps.com","choice":["url_off","keyword_off"],"members":"server.pem","enabled":"on","comment":""}],
+	"error_code": "0"
+}

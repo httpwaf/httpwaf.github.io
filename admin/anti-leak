@@ -1,0 +1,8 @@
+{
+	"id": 1,
+	"others": {
+		"max_rules": 3
+	},
+	"result": [{"dir":"/page.json","note":"内容显示","enabled":"off"}],
+	"error_code": "0"
+}

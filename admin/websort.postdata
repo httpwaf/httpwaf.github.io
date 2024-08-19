@@ -1,0 +1,132 @@
+POST /cgi-bin/luci/;stok=52f2fa9aca8077f589fa9faa3f6eb083/admin/websort?form=websort_list HTTP/1.1
+Host: 192.168.100.1
+Content-Length: 1571
+Cache-Control: max-age=0
+Origin: http://192.168.100.1
+Upgrade-Insecure-Requests: 1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryRCK3gpiA3IZUenk8
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://192.168.100.1/webpages/index.html
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: sysauth=d92935d180397715f9bb24c8807a0f6d
+Connection: keep-alive
+
+------WebKitFormBoundaryRCK3gpiA3IZUenk8
+Content-Disposition: form-data; name="imagefile"; filename="a.txt"
+Content-Type: text/plain
+
+*.1ting.com
+*.9ku.com
+*.9sky.com
+*.cnzz.com
+duomi.com
+*.kugou.com
+*.kuwo.cn
+top100.cn
+*.xiami.com
+*.yinyuetai.com
+*.yue365.com
+music.baidu.com
+music.10086.cn
+music.soso.com
+music.tudou.com
+music.yahoo.cn
+y.qq.com
+yue.qq.com
+music.chinaso.com
+s.music.so.com
+music.163.com
+mp3.sogou.com
+music.hao123.com
+*.5nd.com
+music.douban.com
+*.666ccc.com
+*.yy8844.cn
+sooopu.com
+music.sina.com.cn
+fanxing.kugou.com
+music.weibo.com
+g.beva.com
+songtaste.com
+*.vvvdj.com
+*.mtv123.com
+*.dj97.com
+*.djkk.com
+*.ik123.com
+*.migu.cn
+music.yule.sohu.com
+music.youku.com
+yue.ifeng.com
+guitarchina.com
+music.so.com
+*.qupu123.com
+*.yymp3.com
+*.mvbox.cn
+erge.qqbaobao.com
+sogua.com
+*.23356.com
+*.tan8.com
+music.cctv.com
+changba.com
+cnwav.com
+fm.baidu.com
+*.show160.com
+*.djye.com
+*..qq190.com
+*.imusic.cn
+pu.onegreen.net
+*.a8.com
+*.446655.com
+*.aitingwang.com
+mojim.com
+*.2651.cn
+*.9sky.com
+*.ttpod.com
+hifidiy.net
+y.baidu.com
+*.dj520.com
+*.zhaogepu.com
+v.wudao.com
+*.yaotou.com
+*.moofeel.com
+duomi.com
+*.gepuwang.net
+*.ca001.com
+*.ccguitar.cn
+*.dj527.com
+*.4399er.com
+*.cnscore.com
+*.gcwdq.com
+*.luoo.net
+*.cdbao.net
+*.36dj.com
+fingerstylechina.com
+*.guitarworld.com.cn
+*.fm78.cn
+5dian1.net
+music.le.com
+besgold.com
+*.tingge123.com
+music.k618.cn
+hcdj.com
+*.hulusi.com
+*.52jt.net
+*.mask9.com
+*.ik6.com
+*.60dj.com
+------WebKitFormBoundaryRCK3gpiA3IZUenk8
+Content-Disposition: form-data; name="operation"
+
+upload
+------WebKitFormBoundaryRCK3gpiA3IZUenk8--
+
+
+
+{
+	"id": 1,
+	"result": ["*.1ting.com", "*.9ku.com", "*.9sky.com", "*.cnzz.com", "duomi.com", "*.kugou.com", "*.kuwo.cn", "top100.cn", "*.xiami.com", "*.yinyuetai.com", "*.yue365.com", "music.baidu.com", "music.10086.cn", "music.soso.com", "music.tudou.com", "music.yahoo.cn", "y.qq.com", "yue.qq.com", "music.chinaso.com", "s.music.so.com", "music.163.com", "mp3.sogou.com", "music.hao123.com", "*.5nd.com", "music.douban.com", "*.666ccc.com", "*.yy8844.cn", "sooopu.com", "music.sina.com.cn", "fanxing.kugou.com", "music.weibo.com", "g.beva.com", "songtaste.com", "*.vvvdj.com", "*.mtv123.com", "*.dj97.com", "*.djkk.com", "*.ik123.com", "*.migu.cn", "music.yule.sohu.com", "music.youku.com", "yue.ifeng.com", "guitarchina.com", "music.so.com", "*.qupu123.com", "*.yymp3.com", "*.mvbox.cn", "erge.qqbaobao.com", "sogua.com", "*.23356.com", "*.tan8.com", "music.cctv.com", "changba.com", "cnwav.com", "fm.baidu.com", "*.show160.com", "*.djye.com", "*..qq190.com", "*.imusic.cn", "pu.onegreen.net", "*.a8.com", "*.446655.com", "*.aitingwang.com", "mojim.com", "*.2651.cn", "*.9sky.com", "*.ttpod.com", "hifidiy.net", "y.baidu.com", "*.dj520.com", "*.zhaogepu.com", "v.wudao.com", "*.yaotou.com", "*.moofeel.com", "duomi.com", "*.gepuwang.net", "*.ca001.com", "*.ccguitar.cn", "*.dj527.com", "*.4399er.com", "*.cnscore.com", "*.gcwdq.com", "*.luoo.net", "*.cdbao.net", "*.36dj.com", "fingerstylechina.com", "*.guitarworld.com.cn", "*.fm78.cn", "5dian1.net", "music.le.com", "besgold.com", "*.tingge123.com", "music.k618.cn", "hcdj.com", "*.hulusi.com", "*.52jt.net", "*.mask9.com", "*.ik6.com", "*.60dj.com"],
+	"error_code": "0"
+}
+

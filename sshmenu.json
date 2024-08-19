@@ -1,0 +1,337 @@
+{
+	"success": true,
+	"code": 200,
+	"message": "请求成功",
+	"data": {
+		"id": "1265476890672672808",
+		"account": "admin",
+		"nickName": "系统管理员",
+		"name": "系统管理员",
+		"avatar": "1366687498650009602",
+		"birthday": "0",
+		"sex": 1,
+		"email": "",
+		"phone": "",
+		"tel": "",
+		"adminType": 1,
+		"lastLoginIp": "",
+		"lastLoginTime": "",
+		"lastLoginAddress": "-",
+		"lastLoginBrowser": "Chrome",
+		"lastLoginOs": "Windows 11",
+		"loginEmpInfo": {
+			"jobNum": null,
+			"orgId": null,
+			"orgName": null,
+			"extOrgPos": [],
+			"positions": []
+		},
+		"apps": [],
+		"roles": [],
+		"permissions": [],
+		"menus": [{
+			"code": "system",
+			"value": [{
+				"id": "1264622039642255311",
+				"parentId": "0",
+				"title": "主页面板",
+				"value": "javascript:;",
+				"icon": "layui-icon-home",
+				"weight": 1,
+				"children": [{
+				  "id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "首页",
+					"value": "/sshhtml/other/home_osdss.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				}],
+				"pid": "0"
+			},{
+				"id": "1264622039642255311",
+				"parentId": "0",
+				"title": "物理安全",
+				"value": "javascript:;",
+				"icon": "layui-icon-component",
+				"weight": 1,
+				"children": [{
+				  "id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "CPU内存",
+					"value": "/sshhtml/other/home_cpu_mem.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				}],
+				"pid": "0"
+			},{
+				"id": "1264622039642255311",
+				"parentId": "0",
+				"title": "流量安全",
+				"value": "javascript:;",
+				"icon": "layui-icon-chart",
+				"weight": 1,
+				"children": [{
+				  "id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "流量数据",
+					"value": "/sshhtml/other/home_network.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				},{
+					"id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "抗DDOS",
+					"value": "/prochtml/home_ddos.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				},{
+					"id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "IP流量排名",
+					"value": "/prochtml/top100.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				},{
+					"id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "IP白名单",
+					"value": "/html/ip_white.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				},{
+					"id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "IP黑名单",
+					"value": "/html/ip_black.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				},{
+					"id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "IP封禁日志",
+					"value": "/prochtml/ip_ddos_log.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				}],
+				"pid": "0"
+			},{
+				"id": "1264622039642255311",
+				"parentId": "0",
+				"title": "进程安全",
+				"value": "javascript:;",
+				"icon": "layui-icon-app",
+				"weight": 1,
+				"children": [{
+				  "id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "进程数据",
+					"value": "/sshhtml/other/home3.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				},{
+					"id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "风控分析",
+					"value": "/sshhtml/other/home5.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				}, {
+					"id": "12646220396422556019",
+					"parentId": "12646220396422553419",
+					"title": "黑名单进程",
+					"value": "/prochtml/ip_black.html",
+					"icon": null,
+					"weight": 5,
+					"children": [],
+					"pid": "12646220396422553419"
+				}],
+				"pid": "0"
+			},{
+				"id": "12646220396422553418",
+				"parentId": "0",
+				"title": "SSH安全",
+				"value": "javascript:;",
+				"icon": "layui-icon-key",
+				"weight": 2,
+				"children": [{
+					"id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "安全态势",
+					"value": "/sshhtml/other/home_ssh.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				},{
+					"id": "12646220396422556018",
+					"parentId": "12646220396422553418",
+					"title": "登录成功日志",
+					"value": "/sshhtml/tracelog.html",
+					"icon": null,
+					"weight": 5,
+					"children": [],
+					"pid": "12646220396422553418"
+				}, {
+					"id": "12646220396422556018",
+					"parentId": "12646220396422553418",
+					"title": "登录失败日志",
+					"value": "/sshhtml/atklog.html",
+					"icon": null,
+					"weight": 5,
+					"children": [],
+					"pid": "12646220396422553418"
+				},{
+					"id": "12646220396422556018",
+					"parentId": "12646220396422553418",
+					"title": "操作命令日志",
+					"value": "/sshhtml/tracecmd.html",
+					"icon": null,
+					"weight": 5,
+					"children": [],
+					"pid": "12646220396422553418"
+				},{
+					"id": "12646220396422553519",
+					"parentId": "12646220396422553419",
+					"title": "AI零信任分析",
+					"value": "/sshhtml/zero.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "12646220396422553419"
+				}, {
+					"id": "12646220396422556019",
+					"parentId": "12646220396422553419",
+					"title": "IP登录排行分析",
+					"value": "/sshhtml/cmd-ip.html",
+					"icon": null,
+					"weight": 5,
+					"children": [],
+					"pid": "12646220396422553419"
+				}, {
+					"id": "12646220396422556019",
+					"parentId": "12646220396422553419",
+					"title": "十大攻击源分析",
+					"value": "/sshhtml/atk-source.html",
+					"icon": null,
+					"weight": 5,
+					"children": [],
+					"pid": "12646220396422553419"
+				}],
+				"pid": "0"
+			},{
+				"id": "1264622039642255311",
+				"parentId": "0",
+				"title": "文件防篡改",
+				"value": "javascript:;",
+				"icon": "layui-icon-survey",
+				"weight": 1,
+				"children": [{
+				  "id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "目录设置",
+					"value": "/prochtml/anti-tamper.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				},{
+					"id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "篡改日志",
+					"value": "/prochtml/tamper-log.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				}],
+				"pid": "0"
+			},{
+				"id": "12646220396422553418",
+				"parentId": "0",
+				"title": "WEB安全",
+				"value": "javascript:;",
+				"icon": "layui-icon-website",
+				"weight": 2,
+				"children": [{
+					"id": "12646220396422553519",
+					"parentId": "12646220396422553419",
+					"title": "WEB防火墙",
+					"value": "/jump.html?web",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "12646220396422553419"
+				}],
+				"pid": "0"
+			},{
+				"id": "12646220396422553419",
+				"parentId": "0",
+				"title": "系统管理",
+				"value": "javascript:;",
+				"icon": "layui-icon-util",
+				"weight": 2,
+				"children": [{
+					"id": "12646220396422553519",
+					"parentId": "12646220396422553419",
+					"title": "远程管理",
+					"value": "/sshhtml/remote.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "12646220396422553419"
+				}, {
+					"id": "12646220396422556019",
+					"parentId": "12646220396422553419",
+					"title": "系统重启",
+					"value": "/sshhtml/reboot.html",
+					"icon": null,
+					"weight": 5,
+					"children": [],
+					"pid": "12646220396422553419"
+				}],
+				"pid": "0"
+			}]
+		}, {
+			"code": "systool",
+			"value": [{
+				"id": "1338864007892807681",
+				"parentId": "0",
+				"title": "代码生成",
+				"value": "/codeGenerate/index.html",
+				"icon": "layui-icon-app",
+				"weight": 1,
+				"children": [],
+				"pid": "0"
+			}]
+		}],
+		"dataScopes": [],
+		"tenants": null,
+		"enabled": true,
+		"authorities": [],
+		"password": null,
+		"username": "admin",
+		"accountNonExpired": true,
+		"accountNonLocked": true,
+		"credentialsNonExpired": true
+	}
+}

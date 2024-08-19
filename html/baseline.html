@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>基线检测</title>
+    <link rel="stylesheet" href="/assets/libs/layui/css/layui.css"/>
+    <link rel="stylesheet" href="/assets/module/admin.css">
+    <link rel="stylesheet" href="/assets/css/febs.css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- 正文开始 -->
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <!-- 表格工具栏 -->
+            <form class="layui-form toolbar">
+                <div class="layui-form-item">   
+                    <div class="layui-inline">&emsp;
+                        <button class="layui-btn icon-btn" lay-filter="tableSearch" lay-submit>
+                            <i class="layui-icon">&#xe615;</i>开始检测
+                        </button>
+                    </div>
+                 
+                </div>
+            </form>
+            <!-- 数据表格 -->
+            <div class="layui-form-item">
+			        <label class="layui-form-label">检测结果</label>
+			        <div class="layui-input-block">
+			            <textarea name="comment" id="contentBox" type="text/plain" style="width:100%;height:800px" cols="200" class="layui-textarea"> </textarea>
+			        </div>
+    			</div> 
+        </div>
+ 
+    </div>
+</div>
+
+<!-- 表格操作列 -->
+<script type="text/html" id="tableBar">
+    <a class="layui-btn layui-btn-normal layui-btn-xs" perm-show="sysPos:detail" lay-event="detail">查看</a>
+</script>
+
+<script type="text/html" id="atkTpl">
+    <div>
+        {{# if (d.atk == "是") { }}
+        <span class="layui-badge febs-tag-red">是</span>
+        {{# } else if (d.risk == "中") { }}
+        <span class="layui-badge febs-tag-orange">中</span>
+        {{# } else { }}
+        <span>--</span>
+        {{# } }}
+    </div>
+</script>
+
+
+<!-- js部分 -->
+<script src="/assets/libs/layui/layui.js"></script>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/jquery-3.2.1.min.js" ></script>
+<script src="/assets/js/util.js"></script>
+<script>
+    layui.use(['layer', 'table', 'tableX', 'notice', 'upload','xnUtil','laydate'], function () {
+        var $ = layui.jquery;
+        var layer = layui.layer;
+        var table = layui.table;
+        var tableX = layui.tableX;
+        var admin = layui.admin;
+        var form = layui.form;
+        var notice = layui.notice;
+        var xnUtil = layui.xnUtil;
+        var rowindex =  0;
+        var upload = layui.upload;
+        var laydate = layui.laydate;
+        var URL_LIST = "/admin/baseline?token=" + CoreUtil.getStok("token") + 	'&time=' + Date.parse(new Date()); 
+        var URL_LIST2 = "/admin/jixianjianche?token=" + CoreUtil.getStok("token") + 	'&time=' + Date.parse(new Date());    
+        var URL_FILTER = "/admin/filter_atklog?token=" + CoreUtil.getStok("token") + 	'&time=' + Date.parse(new Date()); 
+
+        $.ajax({
+             type: "GET",
+             url:  URL_LIST,
+             data: "{}",
+             async: false,
+             dataType: "text",
+             success: function( data ) {
+                 $('#contentBox').text(data);
+            }
+        });
+        
+  
+
+        /* 表格搜索 */
+        form.on('submit(tableSearch)', function (data) {
+        	  $.ajax({
+	             type: "GET",
+	             url:  URL_LIST2,
+	             data: "{}",
+	             async: false,
+	             dataType: "text",
+	             success: function( data ) {
+	                layer.msg('正在快速扫描，请稍等几秒完成......', {icon: 6, time: 6000}, function () {
+	        	  	    window.location.reload();
+	                           }); 
+	            }
+            });
+        	    	
+            return false;
+        });
+
+   
+    });
+</script>
+</body>
+</html>

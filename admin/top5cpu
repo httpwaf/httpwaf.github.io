@@ -1,0 +1,22 @@
+{
+ "id":1,
+ "result":[{
+  "procname":"/hiproc/bin/prochfw",
+  "cpu":"1.0",
+  "mem":"1.1",
+  "memkb":"21444"
+},{
+  "procname":"/usr/libexec/openssh/sftp-server",
+  "cpu":"1.0",
+  "mem":"0.5",
+  "memkb":"8620"
+},{
+  "procname":"/usr/sbin/sshd",
+  "cpu":"1.0",
+  "mem":"0.9",
+  "memkb":"17024"
+}],
+"totalRows":3,
+"date":"2023-06-12",
+"error_code":"0"
+}

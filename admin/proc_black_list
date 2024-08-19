@@ -1,0 +1,10 @@
+{
+ "id":1,
+ "result":[{"enabled":"on","procname":"wget","note":"防止RCE漏洞下载后门"},{"enabled":"on","procname":"curl","note":"防止RCE漏洞上载文件"}],
+"totalRows":16,
+"tcp":"0",
+"udp":"0",
+"icmp":"0",
+"date":"2022-12-02",
+"error_code":"0"
+}

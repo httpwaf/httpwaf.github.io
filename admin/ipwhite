@@ -1,0 +1,8 @@
+{
+	"id": 1,
+	"others": {
+		"max_rules": 5
+	},
+	"result": [{"enabled":"on","ipaddr":"1.1.1.1/24"}],
+	"error_code": "0"
+}

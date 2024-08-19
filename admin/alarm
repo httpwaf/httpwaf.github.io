@@ -1,0 +1,5 @@
+{
+	"id": 1,
+	"result": {"filter_mode":"drop","jump":"http://www.hihttps.com","staticfile":"jpg|png|js|gif|css|ico|txt","wwwdir":"","realip":"","cdn":"","tracelog":"on"},
+	"error_code": "0"
+}

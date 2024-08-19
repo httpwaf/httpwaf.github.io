@@ -1,0 +1,8 @@
+{
+	"id": 1,
+	"result": {
+		"failureCount": 0,
+		"attemptsAllowed": 100
+	},
+	"error_code": "700"
+}

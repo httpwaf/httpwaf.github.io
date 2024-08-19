@@ -1,0 +1,5 @@
+{
+	"id": 1,
+	"result": {"filter_mode":"drop","jump":"22,80,443,9998","staticfile":"0","wwwdir":"","realip":"","cdn":"","tracelog":"on"},
+	"error_code": "0"
+}

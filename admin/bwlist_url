@@ -1,0 +1,33 @@
+{
+	"id": 1,
+	"others": {
+		"max_rules": 20
+	},
+	"result": [{		
+		"comment": "/test/test_black1.html",
+		"textname": "IPGROUP_ANY",
+		"qq_num": "12345,aaa/login",
+		"addr": "IPGROUP_ANY",
+		"record_log": "off",
+		"index": 1,
+		"state": "on",
+		"timeobj": "Any",
+		"name": "bwlist_qq02496",
+		"rule_type": "on"
+	},
+	{
+		"comment": "/test/test_black2.html",
+		"textname": "IPGROUP_ANY",
+		"qq_num": "12345,aaa/login",
+		"addr": "IPGROUP_ANY",
+		"record_log": "off",
+		"index": 1,
+		"state": "on",
+		"timeobj": "Any",
+		"name": "bwlist_qq02496",
+		"rule_type": "on"
+	}
+	
+	],
+	"error_code": "0"
+}

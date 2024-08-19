@@ -1,0 +1,5 @@
+{
+	"id": 1,
+	"result": {"enable":"on","wwwdir":"","interfaces":"LAN","filter_mode":"drop","blocktime":"1800","rate":"3"},
+	"error_code": "0"
+}

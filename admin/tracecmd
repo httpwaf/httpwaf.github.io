@@ -1,0 +1,206 @@
+{
+ "id":1,
+ "result":[{
+"rule_id":"8888",
+"time":"2023-04-11 12:34:00  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"53547",
+"user":"root",
+"ps":"/dev/pts/9",
+"cmd":"cp web2httpd /hiproc/bin/",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:33:50  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"53547",
+"user":"root",
+"ps":"/dev/pts/9",
+"cmd":"./web2httpd",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:32:42  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"53547",
+"user":"root",
+"ps":"/dev/pts/9",
+"cmd":"killall web2httpd",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:32:35  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"53547",
+"user":"root",
+"ps":"/dev/pts/9",
+"cmd":"./web2httpd",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:32:34  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"53547",
+"user":"root",
+"ps":"/dev/pts/9",
+"cmd":"make",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:31:05  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"53547",
+"user":"root",
+"ps":"/dev/pts/9",
+"cmd":"make",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:25:28  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"50187",
+"user":"root",
+"ps":"/dev/pts/8",
+"cmd":"ll -t",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:25:28  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"50187",
+"user":"root",
+"ps":"/dev/pts/8",
+"cmd":"ll -t",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:25:27  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"50187",
+"user":"root",
+"ps":"/dev/pts/8",
+"cmd":"ll -t",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:24:45  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"50187",
+"user":"root",
+"ps":"/dev/pts/8",
+"cmd":"ll -t",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:24:45  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"50187",
+"user":"root",
+"ps":"/dev/pts/8",
+"cmd":"ll -t",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:24:44  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"50187",
+"user":"root",
+"ps":"/dev/pts/8",
+"cmd":"ll -t",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:24:37  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"50187",
+"user":"root",
+"ps":"/dev/pts/8",
+"cmd":"ll -t",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:24:36  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"50187",
+"user":"root",
+"ps":"/dev/pts/8",
+"cmd":"rm sum.log",
+"atk":"危险"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:24:32  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"50187",
+"user":"root",
+"ps":"/dev/pts/8",
+"cmd":"killall log2web",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:24:19  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"53170",
+"user":"root",
+"ps":"/dev/pts/10",
+"cmd":"./hiproc",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:23:51  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"50187",
+"user":"root",
+"ps":"/dev/pts/8",
+"cmd":"ll -t",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:23:50  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"50187",
+"user":"root",
+"ps":"/dev/pts/8",
+"cmd":"ll -t",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:23:31  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"50187",
+"user":"root",
+"ps":"/dev/pts/8",
+"cmd":"ll -t",
+"atk":"--"
+},{
+"rule_id":"8888",
+"time":"2023-04-11 12:23:30  ",
+"src_ip":"192.168.1.173",
+"geoip":"局域网",
+"sport":"50187",
+"user":"root",
+"ps":"/dev/pts/8",
+"cmd":"killall log2web",
+"atk":"--"
+}],
+"totalRows":337,
+"error_code":"0"
+}

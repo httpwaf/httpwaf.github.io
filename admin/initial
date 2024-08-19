@@ -1,0 +1,12 @@
+{
+	"id": 1,
+	"result": {
+		"singleWan": 1,
+		"interfaceCount": 5,
+		"interfaceModel": 8,
+		"radio": 0,
+		"wanmode": 1,
+		"config_status": "Modify"
+	},
+	"error_code": "0"
+}

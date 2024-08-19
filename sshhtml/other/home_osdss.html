@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>工作台</title>
+    <link rel="stylesheet" href="/assets/libs/layui/css/layui.css"/>
+    <link rel="stylesheet" href="/assets/module/admin.css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        /** 应用快捷块样式 */
+        .console-app-group {
+            padding: 16px;
+            border-radius: 4px;
+            text-align: center;
+            background-color: #fff;
+            cursor: pointer;
+            display: block;
+        }
+
+        .console-app-group .console-app-icon {
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            margin-bottom: 6px;
+            display: inline-block;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            font-size: 32px;
+            color: #69c0ff;
+        }
+
+        .console-app-group:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, .08);
+        }
+
+        /** //应用快捷块样式 */
+
+        /** 小组成员 */
+        .console-user-group {
+            position: relative;
+            padding: 10px 0 10px 60px;
+        }
+
+        .console-user-group .console-user-group-head {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            margin-top: -16px;
+            border-radius: 50%;
+        }
+
+        .console-user-group .layui-badge {
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            margin-top: -10px;
+        }
+
+        .console-user-group .console-user-group-name {
+            line-height: 1.2;
+        }
+
+        .console-user-group .console-user-group-desc {
+            color: #8c8c8c;
+            line-height: 1;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        /** 卡片轮播图样式 */
+        .admin-carousel .layui-carousel-ind {
+            position: absolute;
+            top: -41px;
+            text-align: right;
+        }
+
+        .admin-carousel .layui-carousel-ind ul {
+            background: 0 0;
+        }
+
+        .admin-carousel .layui-carousel-ind li {
+            background-color: #e2e2e2;
+        }
+
+        .admin-carousel .layui-carousel-ind li.layui-this {
+            background-color: #999;
+        }
+
+        /** 广告位轮播图 */
+        .admin-news .layui-carousel-ind {
+            height: 45px;
+        }
+
+        .admin-news a {
+            display: block;
+            line-height: 70px;
+            text-align: center;
+        }
+        
+        .layadmin-takerates {
+					padding-top:5px
+				}
+				.layadmin-takerates .layui-progress {
+					margin:50px 0 60px
+				}
+				.layadmin-takerates .layui-progress:last-child {
+					margin-bottom:10px
+				}
+				.layadmin-takerates .layui-progress h3 {
+					position:absolute;
+					right:0;
+					top:-35px;
+					color:#999;
+					font-size:14px
+				}
+				.layadmin-takerates .layui-progress-bar {
+					text-align:left
+				}
+				.layadmin-takerates .layui-progress-text {
+					top:-35px;
+					line-height:26px;
+					font-size:26px
+				}
+
+        /** 最新动态时间线 */
+        .layui-timeline-dynamic .layui-timeline-item {
+            padding-bottom: 0;
+        }
+
+        .layui-timeline-dynamic .layui-timeline-item:before {
+            top: 16px;
+        }
+
+        .layui-timeline-dynamic .layui-timeline-axis {
+            width: 9px;
+            height: 9px;
+            left: 1px;
+            top: 7px;
+            background-color: #cbd0db;
+        }
+
+        .layui-timeline-dynamic .layui-timeline-axis.active {
+            background-color: #0c64eb;
+            box-shadow: 0 0 0 2px rgba(12, 100, 235, .3);
+        }
+
+        .dynamic-card-body {
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .dynamic-card-body:hover {
+            overflow-y: auto;
+            padding-right: 9px;
+        }
+
+        /** 优先级徽章 */
+        .layui-badge-priority {
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            line-height: 18px;
+            border-width: 2px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<!-- 正文开始 -->
+<div class="layui-fluid ew-console-wrapper">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-xs12 layui-col-sm6 layui-col-md2">
+            <div class="layui-card">
+            <a href="/sshhtml/other/home_cpu_mem.html">
+                <div class="layui-card-header">
+                    物理安全<span class="layui-badge layui-badge-green pull-right">周</span>
+                </div>
+                <div class="layui-card-body">           
+                    <p class="lay-big-font text-success"> 
+                    	<span id="todaycpu">0</span> 
+                    	<span class="text-success pull-right" id="weekcpu">0</span>
+                    </p>
+                    <p>今日<span class="pull-right">一周</span></p>
+                </div>
+            </a>    
+            </div>
+        </div>
+        
+          <div class="layui-col-xs12 layui-col-sm6 layui-col-md2">
+            <div class="layui-card">
+            <a href="/sshhtml/other/home_network.html">	
+                <div class="layui-card-header">
+                    流量安全<span class="layui-badge layui-badge-green pull-right">周</span>
+                </div>
+                <div class="layui-card-body">           
+                    <p class="lay-big-font text-success"> 
+                    	<span id="todayflow">0</span> 
+                    	<span class="text-success pull-right" id="weekflow">0</span>
+                    </p>
+                    <p>今日<span class="pull-right">一周</span></p>
+                </div>
+             </a>      
+            </div>
+        </div>
+        
+          <div class="layui-col-xs12 layui-col-sm6 layui-col-md2">
+            <div class="layui-card">
+            <a href="/sshhtml/zero.html">		
+                <div class="layui-card-header">
+                    SSH安全<span class="layui-badge layui-badge-green pull-right">月</span>
+                </div>
+                <div class="layui-card-body">           
+                    <p class="lay-big-font text-success"> 
+                    	<span id="todayssh">0</span> 
+                    	<span class="text-success pull-right" id="weekssh">0</span>
+                    </p>
+                    <p>今日<span class="pull-right">一月</span></p>
+                </div>
+            </a>     
+            </div>
+        </div>
+        
+          <div class="layui-col-xs12 layui-col-sm6 layui-col-md2">
+            <div class="layui-card">
+            <a href="/sshhtml/other/home5.html">		
+                <div class="layui-card-header">
+                    进程安全<span class="layui-badge layui-badge-green pull-right">周</span>
+                </div>
+                <div class="layui-card-body">           
+                    <p class="lay-big-font text-success"> 
+                    	<span id="todayproc">0</span> 
+                    	<span class="text-success pull-right" id="weekproc">0</span>
+                    </p>
+                    <p>今日<span class="pull-right">一周</span></p>
+                </div>
+            </a>     
+            </div>
+        </div>
+        
+          <div class="layui-col-xs12 layui-col-sm6 layui-col-md2">
+            <div class="layui-card">
+            <a href="/prochtml/tamper-log.html">		
+                <div class="layui-card-header">
+                    文件防篡改<span class="layui-badge layui-badge-green pull-right">周</span>
+                </div>
+                <div class="layui-card-body">           
+                    <p class="lay-big-font text-success"> 
+                    	<span id="todayanti">0</span> 
+                    	<span class="text-success pull-right" id="weekanti">0</span>
+                    </p>
+                    <p>今日<span class="pull-right">一周</span></p>
+                </div>
+            </a>      
+            </div>
+        </div>
+        
+          <div class="layui-col-xs12 layui-col-sm6 layui-col-md2">
+            <div class="layui-card">
+            <a href="/sshhtml/tracelog.html">		
+                <div class="layui-card-header">
+                    系统登录<span class="layui-badge layui-badge-green pull-right">周</span>
+                </div>
+                <div class="layui-card-body">           
+                    <p class="lay-big-font text-success"> 
+                    	<span id="todayweb">0</span> 
+                    	<span class="text-success pull-right" id="weekweb">0</span>
+                    </p>
+                    <p>今日<span class="pull-right">一周</span></p>
+                </div>
+             </a>     
+            </div>
+        </div>
+  
+  
+      
+    
+      
+    </div>
+    <!-- 图表 -->
+
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md8 layui-col-sm6">
+            <div class="layui-row layui-col-space15">   
+            	          
+              <div class="layui-col-md6">
+                <div class="layui-card" >
+                	<a href="/sshhtml/other/home_network.html">
+                  <div class="layui-card-header" id="ectodayflow">今日流量</div>
+                  <div class="layui-card-body dynamic-card-body mini-bar">
+                    <div id="consoleChartsTodayFlow" style="height: 265px;"></div>
+                  </div>
+                  </a> 
+                </div>
+              </div>
+              
+             <div class="layui-col-md6">
+                <div class="layui-card" style="overflow: hidden;">
+                	<a href="/sshhtml/other/home_network.html">
+                    <div class="layui-card-header" id="todaytcp">今日TCP连接数峰值（个）</div>
+                    <div class="layui-card-body">
+                        <div id="consoleChartsTodayTCP" style="height: 265px;"></div>
+                    </div>
+                  </a>   
+                </div>
+             </div>  
+             
+            <div class="layui-col-md6">
+             <div class="layui-card">
+              	<div class="layui-card-header" id="weekflow">一周流量</div>
+          	    <div class="layui-card-body" style="padding: 10px 10px;height: 265px">
+          	       <div id="consoleChartsWeekFlow" style="height: 265px;"></div>
+               </div>
+            </div>
+            </div>   
+    
+        <div class="layui-col-md6">
+            <div class="layui-card">
+              <div class="layui-card-header" id="weektcp">一周TCP连接数峰值（个）</div>
+              <div class="layui-card-body" style="padding: 10px 10px;height: 265px">
+                 <div id="consoleChartsWeekTCP" style="height: 265px;"></div>
+              </div>
+             </div>
+        </div>  
+    </div>
+   </div>
+                
+        
+        <div class="layui-col-md4 layui-col-sm6">
+            <!-- 宣传部分<div class="layui-card">
+                <div class="layui-card-header">版本信息</div>
+                <div class="layui-card-body" style="padding: 10px 10px;height: 265px">
+                    <table class="layui-table layui-text">
+                        <colgroup>
+                            <col width="120">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                        <script type="text/html" ew-tpl>
+                        	 <tr>
+                                <td>产品名称</td>
+                                <td>Open Source Data Security System </td>
+                            </tr>
+                            <tr>
+                                <td>单机中文版</td>
+                                <td>999￥/年 &emsp;2999￥/5年 <a href="http://59.110.1.135:9998/proc.html" target="_blank" class="layui-btn layui-btn-sm pull-right">实战演示</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>单机英文版</td>
+                                <td>199$/年  &emsp;源码9999$
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>分布式版</td>
+                                <td>10台起&emsp; &emsp;&emsp;&emsp;&emsp; <a href="http://59.110.1.135:9998/plat/html/" target="_blank" class="layui-btn layui-btn-sm layui-btn-danger pull-right" >集中管控</a>
+                                </td>
+                            </tr>
+                           
+                        </script>
+                           <tr>
+                            <td>主要特色</td>
+                            <td>流量 / 防火墙 / 进程 / 重要日志 / 未知攻击 / 开源/ OEM贴牌</td>
+                        </tr>
+                                             
+                        <tr>
+                            <td>联系渠道</td>
+                            <td>
+                               微信号qq1510837410
+                               <a href="http://59.110.1.135:9998/prochtml/pay.html" target="_blank"  class="layui-btn layui-btn-sm pull-right">扫二维码</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>    -->
+                 
+           <div class="layui-card">
+           	 <a href="/prochtml/top100.html">
+          	  <div class="layui-card-header" id="topcpu">今日IP流量排行（TOP 100)</div>
+          	  <div class="layui-card-body" style="padding: 10px 10px;height: 265px">
+          	    <table id="table0" lay-filter="table0"></table>
+              </div>
+            </a>
+          </div>
+                     
+            <div class="layui-card">
+            	 <a href="/sshhtml/other/home_cpu_mem.html">
+                  <div class="layui-card-header">系统状态</div>
+                    <div class="layui-card-body  layadmin-takerates"  style="padding: 10px 10px;height: 265px">              						          
+                      <!--<div class="console-user-group">
+                        <img src="/assets/images/head.jpg" class="console-user-group-head" alt=""/>
+                        <div class="console-user-group-name">OSDSS</div>
+                        <div class="console-user-group-desc"><h3>工作状态</h3></div>
+                        <span class="layui-badge layui-badge-green">正常</span>
+                      </div>-->
+                      <div><p>&nbsp;</p></div>
+                    	                    	
+											<div class="layui-progress" lay-filter="cpu" lay-showPercent="yes">
+						            <h3>CPU使用率</h3>
+						            <div class="layui-progress-bar" id="cpu" lay-percent="20%"></div>
+						          </div>
+						          
+						          <div class="layui-progress" lay-filter="disk" lay-showPercent="yes">
+						            <h3>磁盘使用率</h3>
+						            <div class="layui-progress-bar" id="disk" lay-percent="30%"></div>
+						          </div>
+						          
+						          <div class="layui-progress" lay-filter="mem" lay-showPercent="yes">
+						            <h3>内存占用率</h3>
+						            <div class="layui-progress-bar" id="mem" lay-percent="50%"></div>
+						          </div>                     
+                  </div>
+              </a>    
+           </div>
+      
+        
+        </div>
+    </div>
+</div>
+<!-- js部分 -->
+<script src="/assets/libs/layui/layui.js"></script>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/libs/echarts/echarts.min.js"></script>
+<!--
+<script src="/assets/libs/echarts/china.js"></script>
+<script src="/assets/libs/echarts/echarts-wordcloud.min.js"></script> -->
+<script src="/assets/libs/echarts/echartsTheme.js"></script>
+<script src="/assets/js/jquery-3.2.1.min.js" ></script>
+<script src="/assets/js/util.js"></script>
+
+<script type="text/html" id="flowTpl">	
+    <div> 
+        {{# if (parseInt(d.rx_bytes) > 1024*1024*1024) { }}
+           <span class="layui-badge layui-bg-orange">{{parseFloat(parseInt(d.rx_bytes)/1073741824).toFixed(3)}} GB</span>
+        {{# } else if (parseInt(d.rx_bytes) > 1024*1024) { }}  
+         	 <span>{{parseFloat(parseInt(d.rx_bytes)/1048576).toFixed(0)}} MB</span>
+        {{# } else if (parseInt(d.rx_bytes) > 1024) { }}  
+         	 <span>{{parseFloat(parseInt(d.rx_bytes)/1024).toFixed(0)}} KB</span> 	 
+        {{# } else { }}
+        	<span>{{parseFloat(parseInt(d.rx_bytes)/1).toFixed(0)}} B</span>
+        {{# } }}			
+    </div>
+</script>
+
+
+<script type="text/html" id="flowSend">	
+    <div> 
+        {{# if (parseInt(d.tx_bytes) > 1024*1024*1024) { }}
+           <span class="layui-badge layui-bg-orange">{{parseFloat(parseInt(d.tx_bytes)/1073741824).toFixed(3)}} GB</span>
+        {{# } else if (parseInt(d.tx_bytes) > 1024*1024) { }}  
+         	 <span>{{parseFloat(parseInt(d.tx_bytes)/1048576).toFixed(0)}} MB</span>
+        {{# } else if (parseInt(d.tx_bytes) > 1024) { }}  
+         	 <span>{{parseFloat(parseInt(d.tx_bytes)/1024).toFixed(0)}} KB</span> 	 
+        {{# } else { }}
+        	 <span>{{parseFloat(parseInt(d.tx_bytes)/1).toFixed(0)}} B</span>
+        {{# } }}		
+    </div>
+</script>
+
+<script>
+  	var token = CoreUtil.getStok("token");
+		if (token == undefined || token == null || token.length < 32 )
+		    token = "12345678123456781234567812345678";	
+	
+    layui.use(['element','layer','table', 'tableX', 'notice', 'upload','xnUtil','laydate'], function () {
+        var $ = layui.jquery;
+        var layer = layui.layer;        
+        var  table = layui.table;        		        
+		    var tableX = layui.tableX;
+		    var admin = layui.admin;
+		    var form = layui.form;
+		    var notice = layui.notice;
+		    var xnUtil = layui.xnUtil;
+		    var rowindex =  0;
+		    var upload = layui.upload;
+		    var laydate = layui.laydate;
+        
+        var URL_LIST = "/admin/osdss_home?token=" + CoreUtil.getStok("token") + 	'&time=' + Date.parse(new Date()) / 1000;
+        var URL_FILTER = "/admin/filter_atklog?token=" + CoreUtil.getStok("token") + 	'&time=' + Date.parse(new Date()) / 1000; 
+        var xdata0 = [];
+        var xdata1 = [];
+        var xdata2 = []; 
+        var xdata3 = [];
+        var ydata1 = [];
+        var ydata2 = [];
+        var ydata3 = [];
+        var ydata4 = [];
+        var ydata5 = [];
+        var today_bytes = [];
+        var week_bytes = [];  
+        var today_tcp_estab = [];  
+        var week_tcp_estab = [];    
+     
+        var run    = 0;
+        var yname3  = '单位（M）';
+        var yname2  = 'M';
+        var filter_name = '';
+        
+       
+        load_echarts();
+        load_top10_ip();
+        function load_echarts() {    
+        //检测token
+        CoreUtil.sendAjax(URL_LIST, CoreUtil.encode_str("get",JSON.stringify(""),0), function (res) {
+         	  if (res.xdata0 != null && res.cpu != null && res.mem != null && res.dk_drive_rblk != null) {
+         	      xdata0 =  res.xdata0;
+         	      xdata1 =  res.xdata1;
+         	      xdata2 =  res.xdata2;
+         	      xdata3 =  res.xdata3;
+         	      ydata1 =  res.rx_bytes;
+         	      ydata2 =  res.tx_bytes;
+         	      ydata3 =  res.tcp_estab;
+         	      ydata4 =  res.tcp_estab;
+         	      ydata5 =  res.rx_bytes; 
+         	      today_bytes = res.today_bytes;
+         	      week_bytes  = res.week_bytes;
+         	      today_tcp_estab = res.today_tcp_estab;
+         	      week_tcp_estab  = res.week_tcp_estab;        	 
+         	  }
+         	  if(res.systemstat != null){ 
+         	  
+                 var element = layui.element;              
+                 $('#cpu').attr('lay-percent',res.systemstat[0] +'%');
+                 $('#disk').attr('lay-percent',res.systemstat[1] +'%');
+                 $('#mem').attr('lay-percent',res.systemstat[2] +'%');          
+            	   // element.progress('cpu', res.systemstat[0] +'%');
+            	   
+            	   if (res.systemstat[0] > 90)
+            	       $("#cpu").addClass("layui-bg-red");    
+            	   else if  (res.systemstat[0] > 50)
+            	   	   $("#cpu").addClass("layui-bg-orange");    
+            	   else
+            	   		  run = 0;    
+            	   		       	       
+            	   if (res.systemstat[1] > 90)
+            	       $("#disk").addClass("layui-bg-red");    
+            	   else if  (res.systemstat[1] > 60)
+            	   	   $("#disk").addClass("layui-bg-orange");    
+            	   else
+            	   		  run = 0;   
+            	   		     
+            	   if (res.systemstat[2] > 90)
+            	       $("#mem").addClass("layui-bg-red");
+            	   else if  (res.systemstat[2] > 70)
+            	   	   $("#mem").addClass("layui-bg-orange");    
+            	   else
+            	   		  run = 0;      
+            	       
+            
+            	    element.render('cpu');    
+            	         	
+            }	   
+	    	    
+         	  if (res.cpu_today != null && res.ssh_today != null) {
+         	  	 
+         	     if (res.cpu_today > 0) {
+         	  	    $("#todaycpu").removeClass("text-success");	 
+                  $("#todaycpu").addClass("text-danger");
+                  $("#todaycpu").html(res.cpu_today);
+               }	
+               if (res.ssh_today > 0) {
+         	  	    $("#todayssh").removeClass("text-success");	 
+                  $("#todayssh").addClass("text-danger");
+                  $("#todayssh").html(res.ssh_today);
+               }
+               if (res.proc_today > 0) {
+         	  	    $("#todayproc").removeClass("text-success");	 
+                  $("#todayproc").addClass("text-danger");
+                  $("#todayproc").html(res.proc_today);
+               }
+               if (res.tamper_today > 0) {
+         	  	    $("#todayanti").removeClass("text-success");	 
+                  $("#todayanti").addClass("text-danger");
+                  $("#todayanti").html(res.tamper_today);
+               }
+               if (res.flow_today > 0) {
+         	  	    $("#todayflow").removeClass("text-success");	 
+                  $("#todayflow").addClass("text-danger");
+                  $("#todayflow").html(res.flow_today);
+               }
+               if (res.web_today > 0) {
+         	  	    $("#todayweb").removeClass("text-success");	 
+                  $("#todayweb").addClass("text-danger");
+                  $("#todayweb").html(res.web_today);
+               } 
+         	   	
+         	  }
+         	  if (res.cpu_week != null && res.ssh_week != null) {
+         	  	 if (res.cpu_week > 0) {
+         	  	    $("#weekcpu").removeClass("text-success");	 
+                  $("#weekcpu").addClass("text-warning");
+                  $("#weekcpu").html(res.cpu_week);
+               } 
+               
+               if (res.proc_week > 0) {
+         	  	    $("#weekproc").removeClass("text-success");	 
+                  $("#weekproc").addClass("text-warning");
+                  $("#weekproc").html(res.proc_week);
+               } 
+               
+                if (res.ssh_week > 0) {
+         	  	    $("#weekssh").removeClass("text-success");	 
+                  $("#weekssh").addClass("text-warning");
+                  $("#weekssh").html(res.ssh_week);
+               } 
+               
+                if (res.flow_week > 0) {
+         	  	    $("#weekflow").removeClass("text-success");	 
+                  $("#weekflow").addClass("text-warning");
+                  $("#weekflow").html(res.flow_week);
+               } 
+               
+                if (res.tamper_week > 0) {
+         	  	    $("#weekanti").removeClass("text-success");	 
+                  $("#weekanti").addClass("text-warning");
+                  $("#weekanti").html(res.tamper_week);
+               } 
+               
+                if (res.web_week > 0) {
+         	  	    $("#weekweb").removeClass("text-success");	 
+                  $("#weekweb").addClass("text-warning");
+                  $("#weekweb").html(res.web_week);
+               } 
+ 
+         	  }
+                  	  
+         	
+         	  if (res.yname3 != null) {         	  
+         	  	  yname3   = res.yname3;             	 
+         	  	  $("#ectodayflow").html("今日流量" + res.yname);    
+         	  }
+         	  
+         	  if (res.yname2 != null) {         	  
+         	  	  yname2   = res.yname2; 
+         	  }
+       
+        
+         	  
+        }, "POST", false,null,null,false, function (res) {            	
+                 layer.msg("登录失败！");
+        });
+        
+        if (xdata2.length == 0 || xdata1.length == 0) 
+            return;
+          
+
+        /** 渲染今日流量访问统计图表 */
+        var myCharts3 = echarts.init(document.getElementById('consoleChartsTodayFlow'),myEchartsTheme);
+        var options3 = {
+            tooltip: {trigger: 'axis', axisPointer: {lineStyle: {color: '#E0E0E0'}}},
+            color: ['#10B4E8','#FFA800'],          
+            grid: {top: '15px', left: '35px', right: '55px', bottom: '40px'},
+            xAxis: {
+                name: '时间',
+                nameTextStyle: {color: '#595959'},
+                type: 'category',
+                data: xdata0,
+                axisLine: {lineStyle: {color: '#E0E0E0'}, symbol: ['none', 'arrow'], symbolOffset: [0, 10]},
+                axisLabel: {color: '#8c8c8c'},
+                axisTick: {alignWithLabel: true}
+            },
+            yAxis: {
+                name: '',
+                nameTextStyle: {color: '#595959'},
+                type: 'value',
+                boundaryGap: ['0', '20%'],
+                axisTick: {show: false},
+                axisLine: {lineStyle: {color: '#E0E0E0'}, symbol: ['none', 'arrow'], symbolOffset: [0, 10]},
+                axisLabel: {color: '#8c8c8c'},
+                splitLine: {show: false},
+                splitArea: {show: false},
+                minInterval: 1
+            },
+            grid:{
+            	  x:50,
+            	  y:15
+            },		  
+            series: [{
+                name: '流量', type: 'line', stack: 'one', barMaxWidth: '30px', 
+                markPoint:{data:[{type:'max',name:'max'}], label:{normal:{formatter:function(param){return param.data.value+yname2}}},symbolOffset: [0, 0]},
+                smooth: true, symbol: 'none',stack: 'a', 
+                //lineStyle: {normal: {color: "#F29C1B" }},
+                itemStyle: {normal: {areaStyle: {type: "default"}}},
+                label: {normal: {show: true, position: 'top'}}
+            }]
+        };
+        myCharts3.setOption(options3);
+        // 赋值
+        myCharts3.setOption({
+        	    series: [
+        	        {data: today_bytes}
+        	]});
+        	
+        //点击x轴坐标
+        myCharts3.getZr().on('click', function (params) {	 
+		        window.location.reload();  
+        
+			 });
+			 
+
+
+        /** 渲染一周流量图表 */
+       // var myCharts4 = echarts.init(document.getElementById('consoleChartsIP'),myEchartsTheme2);
+        var myCharts4 = echarts.init(document.getElementById('consoleChartsWeekFlow'));
+        var options4 = {
+            tooltip: {trigger: 'axis', axisPointer: {lineStyle: {color: '#E0E0E0'}}},
+            color: ['#10B4E8','#FFA800'],
+            /*legend: {
+                orient: 'vertical', right: '0px', top: '0px',
+                data: ['已签到'], textStyle: {color: '#595959'}
+            },*/
+            grid: {top: '15px', left: '35px', right: '55px', bottom: '40px'},
+            xAxis: {
+                name: '日期',
+                nameTextStyle: {color: '#595959'},
+                type: 'category',
+                data: xdata3,
+                axisLine: {lineStyle: {color: '#E0E0E0'}, symbol: ['none', 'arrow'], symbolOffset: [0, 10]},
+                axisLabel: {color: '#8c8c8c'},
+                axisTick: {alignWithLabel: true}
+            },
+            yAxis: {
+                name: '流量',
+                nameTextStyle: {color: '#595959'},
+                type: 'value',
+                boundaryGap: ['0', '20%'],
+                axisTick: {show: false},
+                axisLine: {lineStyle: {color: '#E0E0E0'}, symbol: ['none', 'arrow'], symbolOffset: [0, 10]},
+                axisLabel: {color: '#8c8c8c'},
+                splitLine: {show: false},
+                splitArea: {show: false},
+                minInterval: 1
+            },
+            grid:{
+            	  x:50,
+            	  y:10
+            },
+            series: [{
+                name: '流量', type: 'bar', stack: 'one', barMaxWidth: '30px',
+                label: {normal: {show: true, position: 'top',formatter: '{c}'+yname3}}
+            }]
+        };  
+   
+        myCharts4.setOption(options4);
+        // 赋值
+        myCharts4.setOption({
+            series: [
+                {data: week_bytes}
+            ]
+        });
+                //点击x轴坐标
+        myCharts4.getZr().on('click', function (params) {	        		   	
+				  
+				    window.location.reload();   
+        
+			 });
+        
+        
+       /** 渲染今日TCP统计图表 */
+        var myCharts5 = echarts.init(document.getElementById('consoleChartsTodayTCP'),myEchartsTheme2);
+        var options5 = {
+						title: {
+							text: "",
+							x: "center",
+							textStyle: {
+								fontSize: 14
+							}
+						},
+						tooltip: {
+							trigger: "axis"
+						},				
+						xAxis: [{
+							type: "category",
+							splitLine:  {show: false,
+			            	           lineStyle:{ type:'dashed',color:'#55B9B4' }
+			            },
+							boundaryGap: !1,
+							data:  xdata0
+						}], 
+						grid:{
+            	  x:50,
+            	  y:10
+            },
+						yAxis: [{
+							    type: 'value',							   
+			            name: yname3,			            
+			            //minInterval:3,   
+			            nameTextStyle: {
+			            	color: '#595959',
+                    padding: [0, 0, 0, -50]    // 四个数字分别为上右下左与原位置距离
+                  },       
+			            axisLabel: {color: '#8c8c8c'},
+			            axisTick: {show: false},
+			            splitLine:  {show: false,
+			            	           lineStyle:{ type:'dashed',color:'#55B9B4' }
+			            },
+			            splitArea: {show: false}
+						}],
+						series: [{
+							markPoint: {
+									data: [{
+										type: "max",
+										name: "\u6700\u5927\u503c"
+									}],
+								  symbolSize:[5,5],
+									symbolOffset: [0, 5],
+									itemStyle: {color:'#FFA800'},
+									label:{normal:{formatter:function(param){return param.data.value+'个'}}}
+							},
+							name: "TCP连接数",
+							type: "line",
+							smooth: !0,						
+							data:  ydata3
+						}]
+		   }; 
+   
+        myCharts5.setOption(options5);
+        //赋值
+        myCharts5.setOption({
+            series: [
+                {data: today_tcp_estab}
+            ]
+        });
+        
+        /** 渲染一周TCP统计图表 */
+        var myCharts2 = echarts.init(document.getElementById('consoleChartsWeekTCP'),myEchartsTheme2);       
+        var options2 = {
+						title: {
+							text: "",
+							x: "center",
+							textStyle: {
+								fontSize: 14
+							}
+						},
+						tooltip: {
+							trigger: "axis"
+						},				
+						xAxis: [{
+							type: "category",
+							splitLine:  {show: false,
+			            	           lineStyle:{ type:'dashed',color:'#55B9B4' }
+			            },
+							boundaryGap: !1,
+							data:  xdata3
+						}], 
+						grid:{
+            	  x:50,
+            	  y:10
+            },
+						yAxis: [{
+							    type: 'value',							   
+			            name: yname3, 
+			           // minInterval:5,   
+			            nameTextStyle: {
+			            	color: '#595959',
+                    padding: [0, 0, 0, -30]    // 四个数字分别为上右下左与原位置距离
+                  },       
+			            axisLabel: {color: '#8c8c8c'},
+			            axisTick: {show: false},
+			            splitLine:  {show: false,
+			            	           lineStyle:{ type:'dashed',color:'#55B9B4' }
+			            },
+			            splitArea: {show: false}
+						}],
+						series: [{
+							markPoint: {
+									data: [{
+										type: "max",
+										name: "\u6700\u5927\u503c"
+									}],
+									symbol: "pin",			
+									symbolSize:[5,5],					
+									symbolOffset: [0, 15],
+									itemStyle: {color:'#FFA800'},
+									label:{normal:{formatter:function(param){return param.data.value+'个'}}}
+							},
+							name: "TCP连接数",
+							type: "line",
+							smooth: !0,						
+							data:  week_tcp_estab
+						}]
+		   }; 
+        myCharts2.setOption(options2);
+       
+       
+        /** 窗口大小改变事件 */
+        window.onresize = function () {
+            //myCharts1.resize();
+            myCharts2.resize();
+            myCharts3.resize();
+            myCharts4.resize();
+            myCharts5.resize();
+          
+        };
+				
+	      }
+	      
+	      function load_top10_ip() {     
+			  var URL_TAB = "/admin/proc_top10_ip?token=" + CoreUtil.getStok("token") + '&time=' + Date.parse(new Date());  
+						  	  
+			           /* 渲染表格 */
+        var insTb = table.render({
+            elem: '#table0',
+            url:  URL_TAB,
+            page: false,  
+            height: '270',      
+            initSort: {
+                    field: 'tx_bytes' 
+                    ,type: 'desc' //排序方式  asc: 升序、desc: 降序、null: 默认排序
+            },        
+            parseData: function(res){ //res 即为原始返回的数据
+					    return {
+					      "code": res.error_code, //解析接口状态
+					      "msg": "success", //解析提示文本
+					      "count": 0, //解析数据长度
+					      "data": res.result //解析数据列表
+					    };
+					  },          
+            cellMinWidth: 30,
+            cols: [[                
+                    {type: "numbers", width: 33,title: '序号'},
+                    {field: "filename",title: "IP",width: 140,	sort: false,templet: function (d) {
+                        return '<a style="color:dodgerblue;cursor: pointer" perm-show="flowableInstanceTask:page" lay-event="atk-log">' + d.filename +'</a>';
+                    }}, 
+                    {field: "geoip",title: "地理位置",width: 140,sort: true},                  
+                    {field: "tx_bytes",title: "流量出",width: 90,templet:'#flowSend',sort: true},
+                    {field: "rx_bytes",title: "流量进",width: 90,templet:'#flowTpl',sort: true}
+      	          
+                ]],
+            done: function(res, curr, count) {
+            	  var that = this.elem.next();
+                    res.data.forEach(function (item, index) {                    
+                        if (item.risk === "high") {	
+                            var tr = that.find(".layui-table-box tbody tr[data-index='" + index + "']");
+                               tr.css("background-color", "#FF5722");
+                               tr.css("color", "white");
+                        }
+                });
+                xnUtil.tableDone(insTb, res, curr, count);           
+            }
+        });
+        
+			  }
+			  
+			   /* 表格工具条点击事件 */
+        table.on('tool(table0)', function (obj) {
+            /* 追踪 */
+            if (obj.event === 'trace') {
+                admin.open({
+                    type: 2,
+                    title: '流程图追踪',
+                    url: getProjectUrl() + 'flowableInstance/traceHtml',
+                    data: { data: obj.data },     // 传递数据到表单页面
+                    area: ['1000px', '700px'],
+                    end: function () { },
+                    success: function (layero, dIndex) {
+                        // 弹窗超出范围出现滚动条
+                        $(layero).children('.layui-layer-content').css('overflow', 'scroll');
+                        $(layero).find('[lay-submit]').focus();
+                    }
+                });
+            }             
+                  
+
+            /*跳转到实例任务页面*/
+            if (obj.event === 'atk-log') {             	         
+                 layer.confirm('确定要把'+ obj.data.filename+'加入黑名单封杀吗？', {
+                    skin: 'layui-layer-admin',
+                    shade: .1
+                }, function () {
+                    layer.msg("抱歉！禁止添加！");
+                	  /*CoreUtil.sendAjax("/admin/anti-tamper?token=" + CoreUtil.getStok("token"), CoreUtil.encode_str("delete",JSON.stringify(data),rowindex), function (res) {
+                        layer.msg('天津成功', {icon: 1, time: 2000}, function () {
+                            insTb.reload();
+                            window.location.reload();
+                        });
+                    }, "POST", false, function (res) {
+                        layer.msg("抱歉！禁止添加！");
+                    });  */            
+                });
+            }
+            
+            if (obj.event === 'trace-log') {             	         
+                window.location.href = getProjectUrl() + 'html/advanced.html?atk-log&sip=' + obj.data.addr;
+            }
+
+            
+        });
+
+
+    });
+</script>
+</body>
+</html>

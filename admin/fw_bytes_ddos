@@ -1,0 +1,5 @@
+{
+	"id": 1,
+	"result": {"filter_mode":"alert","syn":"0","bytes_in":"0","bytes_out":"0","packets_in":"0","packets_out":"0","waflog":"on"},
+	"error_code": "0"
+}

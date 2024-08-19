@@ -1,0 +1,31 @@
+{
+	"id": 1,
+	"result": [{
+		"ipscope_count": "0",
+		"textname": "IPGROUP_ANY",
+		"name": "IPGROUP_ANY",
+		"flag": "system",
+		"ipend_0": "",
+		"ipstart_0": ""
+	}, {
+		"ipscope_count": "0",
+		"textname": "IPGROUP_LAN",
+		"name": "IPGROUP_LAN",
+		"flag": "system",
+		"ipstart_1": "192.168.100.0/24",
+		"ipend_0": "",
+		"ipstart_0": ""
+	}, {
+		"ipend_1": "192.168.1.19",
+		"flag": "user",
+		"ipstart_0": "",
+		"ipscope_count": "2",
+		"textname": "test",
+		"name": "ipgroup_1",
+		"ipend_2": "192.168.1.14",
+		"ipstart_1": "192.168.1.1",
+		"ipstart_2": "192.168.1.1",
+		"ipend_0": ""
+	}],
+	"error_code": "0"
+}

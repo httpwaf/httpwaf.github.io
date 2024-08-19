@@ -1,0 +1,74 @@
+{
+	"id": 1,
+	"others": {
+		"max_num_per_rule": 200,
+		"max_rules": 32
+	},
+	"result": [{
+		"max_num_per_rule": 200,
+		"textname": "SQL注入",
+		"name": "websort1",
+		"comment": "",
+		"enabled": "on",
+		"members": "REQUEST-942-APPLICATION-ATTACK-SQLI.conf",
+		"refer": "0"
+	},
+	{
+		"max_num_per_rule": 200,
+		"textname": "XSS攻击",
+		"name": "websort1",
+		"comment": "",
+		"enabled": "on",
+		"members": "REQUEST-941-APPLICATION-ATTACK-XSS.conf",
+		"refer": "0"
+	},{"max_num_per_rule":200,"textname":"黑客工具恶意扫描","name":"websort1","comment":"","enabled":"on","members":"REQUEST-913-SCANNER-DETECTION.conf","refer":"0"},{
+		"max_num_per_rule": 200,
+		"textname": "密码暴力破解",
+		"name": "websort1",
+		"comment": "",
+		"enabled": "on",
+		"members": "RREQUEST-20-APPLICATION-Brute-PASS.conf",
+		"refer": "0"
+	},{
+		"max_num_per_rule": 200,
+		"textname": "CC & DDOS攻击",
+		"name": "websort1",
+		"comment": "",
+		"enabled": "on",
+		"members": "REQUEST-20-APPLICATION-CC-DDOS.conf",
+		"refer": "0"
+	},{
+		"max_num_per_rule": 200,
+		"textname": "恶意漏洞探测",
+		"name": "websort1",
+		"comment": "",
+		"enabled": "on",
+		"members": "REQUEST-102-WWW-RULES.conf",
+		"refer": "0"
+	},{
+		"max_num_per_rule": 200,
+		"textname": "远程执行任意命令漏洞",
+		"name": "websort1",
+		"comment": "",
+		"enabled": "on",
+		"members": "REQUEST-932-APPLICATION-ATTACK-RCE.conf",
+		"refer": "0"
+	},{
+	  "name":"",
+	  "textname":"机器学习",
+	  "choice":["url_off","keyword_off"],
+	   "members":"REQUEST-888-ML-RULES.conf",
+	   "comment":"",
+	   "enabled": "on",
+	   "operation":"upload"
+	},{
+	  "name":"",
+	  "textname":"人工智能",
+	  "choice":["url_off","keyword_off"],
+	   "members":"REQUEST-188-APPLICATION-EXPERT.conf",
+	   "comment":"",
+	   "enabled": "on",
+	   "operation":"upload"
+	}],
+	"error_code": "0"
+}

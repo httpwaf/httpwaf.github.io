@@ -1,0 +1,5 @@
+{
+	"id": 1,
+	"result": {"port":"22|80|443|9998","staticfile":"0","icmp":"on","tracelog":"off"},
+	"error_code": "0"
+}

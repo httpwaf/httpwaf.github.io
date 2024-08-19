@@ -1,0 +1,25 @@
+{
+	"id": 1,
+	"result": [{
+		"content": "192.168.10.17 成功登陆Web管理系统!",
+		"type": "WEB",
+		"time": "2020-03-17 13:36:18",
+		"level": "NOTICE"
+	}, {
+		"content": "192.168.10.18 成功登陆Web管理系统!",
+		"type": "WEB",
+		"time": "2020-03-17 09:56:38",
+		"level": "NOTICE"
+	}, {
+		"content": "192.168.10.17 成功登陆Web管理系统!",
+		"type": "WEB",
+		"time": "2020-03-17 09:56:38",
+		"level": "NOTICE"
+	}, {
+		"content": "192.168.10.18 查询日志!",
+		"type": "WEB",
+		"time": "2020-03-17 09:56:38",
+		"level": "NOTICE"
+	}],
+	"error_code": "0"
+}

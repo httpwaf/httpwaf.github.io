@@ -1,0 +1,273 @@
+<div class="layui-fluid">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-col-md8">
+      <div class="layui-row layui-col-space15">
+ 
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-header">30日内活跃时间段图</div>
+            <div class="layui-card-body">
+              
+              <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade" lay-filter="LAY-index-dataview">
+                <div carousel-item id="LAY-index-dataview">
+                  <!--<div><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
+                  <div></div>-->
+                  <div></div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        
+          
+     <div class="layui-card">
+     	<div class="layui-card-header">30日内活跃用户前100名（有效次数：指一小时内重复的只算一次）</div> 
+     	 <!--<div class="layui-form layui-card-header layuiadmin-card-header-auto" lay-filter="app-content-list">
+        <div class="layui-form-item">
+          <div class="layui-inline">
+            <label class="layui-form-label">日期</label>
+            <div class="layui-input-inline">
+              <input type="text" name="date" id="date" placeholder="可不选" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-inline">
+            <label class="layui-form-label">IP</label>
+            <div class="layui-input-inline">
+              <input type="text" name="ip" id="ip" placeholder="可不填" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-inline">
+            <label class="layui-form-label">内容</label>
+            <div class="layui-input-inline">
+              <input type="text" name="content" id="content" placeholder="可不填" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+         
+          <div class="layui-inline">
+            <button class="layui-btn layuiadmin-btn-list" lay-submit lay-filter="LAY-app-contlist-search">
+              <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+            </button>
+          </div>
+        </div>
+      </div>-->
+
+      <div class="layui-card-body">    
+        <table id="LAY-app-content-list" lay-filter="LAY-app-content-list"></table>         
+      </div>
+    </div>
+    
+          
+        </div>
+      </div>
+    </div>
+    
+    
+     <div class="layui-col-md4">   
+    	<div class="layui-card">
+        <div class="layui-card-header">活跃时间列表</div> 
+        <div class="layui-card-body">
+          <table id="LAY-home-homepage-admin"></table>
+        </div>
+      </div>      
+    </div>
+     
+    
+    <div class="layui-col-md4">   
+    	<div class="layui-card">
+        <div class="layui-card-header">活跃地区排行</div> 
+        <div class="layui-card-body">
+          <table id="LAY-home-homepage-user"></table>
+        </div>
+      </div>      
+    </div>
+    
+  </div>
+</div>
+
+ <script src="util.js"> </script>
+
+<script type="text/javascript">
+	var layer = layui.layer;
+	var $ = jQuery = layui.jquery;
+	var  element = layui.element;
+  var form = layui.form; 
+  
+	var token = CoreUtil.getStok("token");
+	if (token == undefined || token == null || token.length < 32 )
+	    token = "12345678123456781234567812345678";
+  var tablename = "/bigdata/person30.json?token=" + token;
+  var adminname = "/bigdata/echarts_p30.json?token=" + token;	
+  	    
+
+    
+  form.render(null, 'app-content-list');
+  //搜索
+  form.on('submit(LAY-app-contlist-search)', function(data){
+      var field = data.field;
+      
+      //执行重载
+      table.reload('LAY-app-content-list', {
+        where: field
+      });      
+      
+      if ($("#date").val() != "") {      
+          window.location.reload();
+      }
+    });
+	
+
+	function abc() {
+	    CoreUtil.sendAjax(tablename,null,function (res) {		               
+            if (res.ydata != null){  
+                loadTable(tablename,"#LAY-app-content-list",res.person); 
+            	  loadAdmin(tablename,"#LAY-home-homepage-admin",res.hour);
+            	  loadUser(tablename,"#LAY-home-homepage-user",res.geo); 
+            	  xdata = res.xdata;
+            	  ydata = res.ydata;                
+            }                
+      },"GET",false);
+	}
+	
+
+	abc();
+
+  layui.use('personas', layui.factory('personas'));
+
+	var table = (layui.$, layui.table);
+	//渲染table
+  var loadTable = function (myurl,myelem,data) {       
+      table.render({
+                elem: myelem
+                //,url: myurl
+                ,data: data                          
+                ,limit: 1000               
+                ,height: '480'
+                ,initSort: {
+							     field: 'hour'
+							    ,type: 'desc'
+							  }
+                ,cols: [[
+								{
+									type: "numbers"	,title: "编号"							
+								},
+								{
+									field: "user",title: "用户名",	sort: !0,
+									templet: '<div><a href="https://www.baidu.com/s?wd={{ d.user }}" target="_blank" class="layui-table-link">{{ d.user }}</div>'		
+								},
+								{
+									field: "total",	title: "总次数",	sort: !0		
+								},	
+								{
+									field: "hour",	title: "有效次数",	sort: !0							
+								},								
+								{
+									field: "geo",	title: "经常登录地"
+								}]]
+                ,skin: "line"               
+            });
+
+  };
+  
+  var loadAdmin = function (myurl,myelem,data) {       
+      table.render({
+                elem: myelem
+                ,data: data
+                ,limit: 50       
+                ,initSort: {
+							     field: 'count'
+							    ,type: 'desc'
+							  }               
+                ,height: '330'
+                 ,cols: [[	
+                {
+									type: "numbers"	,title: "编号"							
+								},						
+								{
+									field: "time",title: "时间"
+								},											
+								{
+									field: "count",	title: "有效次数",sort: !0	
+								},	
+								{
+									field: "percent",	title: "百分比"
+								}	
+								]]
+                ,skin: "line"               
+            });
+
+  };
+  
+  var loadUser = function (myurl,myelem,data) {       
+      table.render({
+                elem: myelem
+                ,data: data             
+                ,initSort: {
+							     field: 'count'
+							    ,type: 'desc'
+							  }                  
+                ,height: '480'                
+                ,cols: [[	
+                {
+									type: "numbers"	,title: "编号"							
+								},						
+								{
+									field: "area",title: "省/国家"
+								},											
+								{
+									field: "count",	title: "总次数",sort: !0	
+								},	
+								{
+									field: "percent",	title: "百分比"
+								}	
+								]]
+                ,skin: "line"               
+            });
+
+  };
+
+
+  
+   var loadTop = function () {  
+      
+      table.render({
+                elem: "#LAY-home-homepage-console",             
+	              data:[],
+		            cols: [[
+								{
+									type: "numbers",
+									fixed: "left",
+									width: 50
+								},
+								{
+									field: "src_ip",
+									title: "IP地址",
+									width: 150
+								},
+								{
+									field: "geoip",
+									title: "地理位置",			
+								},
+								{
+									field: "count",
+									title: "访问次数",			
+								}/*,
+								{
+									field: "risk",
+									title: "风险等级",
+									width: 60,
+									templet: function(e) {
+										return "中" == e.risk ? '<del style="color: #5FB878;">' + e.risk + "</del>": "高" == e.risk ? '<span style="color: #FFB800;">' + 
+										       e.risk + "</span>": '<span style="color: #FF5722;">' + e.risk + "</span>"
+									}
+								}*/]],
+								skin: "line"          
+    });
+            
+   
+  };
+     
+        
+
+
+</script>
+

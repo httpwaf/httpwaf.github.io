@@ -1,0 +1,8 @@
+{
+	"id": 1,
+		"others": {                  
+		"max_rules": 3            
+	}, 
+	"result":[{"textname":"2","mac":"3.2.2.1","http_port":"22"},{"textname":"3","mac":"2.2.2.2","http_port":"44"}], 
+	"error_code": "0"
+}

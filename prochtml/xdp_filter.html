@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>IP黑名单</title>
+    <link rel="stylesheet" href="/assets/libs/layui/css/layui.css"/>
+    <link rel="stylesheet" href="/assets/module/admin.css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .layui-form-label {
+        	  text-align: left;
+            width: 180px;
+        }
+        .layui-form-item .layui-input-inline {
+         width: 300px;
+        }
+    </style>  
+</head>
+<body>
+<!-- 正文开始 -->
+<div class="layui-fluid">
+    <div class="layui-card">
+    	 <div class="layui-card-header">设置只允许访问的TCP/UDP端口（内核版本>=5.2才生效）</div>
+    	 <div class="layui-card-body"> 
+        	    <form class="layui-form" action="">   
+                  
+	                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-required" >端口设置：</label>
+                    <div class="layui-input-inline">
+                       <input type="text" name="port" lay-verify="required" placeholder=""  autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">（不同端口中间用英文字符|隔开,SSH和WEB管控端口务必开启）</div>
+                  </div>
+                  
+                  <div class="layui-form-item layui-hide">
+                    <label class="layui-form-label  layui-form-required">UDP端口：</label>
+                    <div class="layui-input-inline">
+                       <input type="text" name="staticfile" lay-verify="required" placeholder=""  autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">（不同端口中间用英文字符 | 隔开,0代表全部）</div>
+                  </div>   
+                  
+                  <div class="layui-form-item">
+                    <label class="layui-form-label">ICMP协议：</label>
+                    <div class="layui-input-inline">                
+                      <input type="checkbox" name="icmp" title="ping"  >
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">（打勾代表允许外网ping本机）</div>
+                 </div>                    
+               
+                  
+                 <div class="layui-form-item">
+                   <label class="layui-form-label">开启生效：</label>
+                   <div class="layui-input-inline">                
+                      <input type="checkbox" name="tracelog" lay-skin="switch" lay-text="已启用|已禁止"  lay-filter="switch"  >
+                   </div>
+                    <div class="layui-form-mid layui-word-aux">（已启用代表上面设置才生效，务必正确）</div>
+                 </div>
+                 
+                <div class="layui-form-item">
+                  <div class="layui-form-label">
+                    <button  type="submit" class="layui-btn layui-btn-normal" lay-submit="" lay-filter="submit">保存</button>                
+                  </div>
+               </div>
+                                
+               </form>  
+               
+         
+       </div>  
+    </div>    
+         
+    <div class="layui-card">   
+    	  <div class="layui-card-header" >设置要封禁的IP地址（内核版本>=5.2才生效）</div>   
+       <div class="layui-card-body">  
+            <!-- 数据表格 -->
+            <table id="dataTable" lay-filter="dataTable"></table>   
+       </div>
+    </div>
+</div>
+
+<!-- 表格操作列 -->
+<script type="text/html" id="tableBar">
+    <a class="layui-btn layui-btn-normal layui-btn-xs" perm-show="url_white:edit" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" perm-show="url_white:delete" lay-event="delete">删除</a>
+</script>
+
+<!-- js部分 -->
+<script src="/assets/libs/layui/layui.js"></script>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/jquery-3.2.1.min.js" ></script>
+<script src="/assets/js/util.js"></script>
+<script>
+    layui.use(['layer', 'table', 'tableX', 'notice','xnUtil'], function () {
+        var $ = layui.jquery;
+        var layer = layui.layer;
+        var table = layui.table;
+        var tableX = layui.tableX;
+        var admin = layui.admin;
+        var form = layui.form;
+        var notice = layui.notice;
+        var xnUtil = layui.xnUtil;
+        var rowindex =  0;  
+        
+        var URL_LIST = "/admin/xdp_filter?token=" + CoreUtil.getStok("token");
+        
+        CoreUtil.sendAjax(URL_LIST,null,function (res) {
+            if(res.result != null){            
+                $(".layui-fluid input[name=port]").val(res.result.port);
+                $(".layui-fluid input[name=staticfile]").val(res.result.staticfile);  
+                
+                if(res.result.icmp =="on"){
+                    $(".layui-fluid input[name=icmp]").attr('checked', 'checked');
+                    $(".layui-fluid input[name=icmp]").attr('type', 'checkbox').val("on"); 
+                }     
+         
+                
+                $(".layui-fluid input[name=tracelog]").attr('type', 'hidden').val("off");
+        
+                	
+                if(res.result.tracelog =="on"){
+                    $(".layui-fluid input[name=tracelog]").attr('checked', 'checked');
+                    $(".layui-fluid input[name=tracelog]").attr('type', 'checkbox').val("on");               
+                    
+                }
+                form.render(); //更新全部
+            }
+        },"GET",false);
+        
+          
+        //监听指定开关
+        form.on('switch(switch)', function(){
+            $(".layui-fluid input[name=tracelog]").attr('type', 'hidden').val(this.checked ? "on" : "off");         
+        });   
+        
+        //监听提交
+        form.on('submit(submit)', function(data){  
+            CoreUtil.sendAjax(URL_LIST,CoreUtil.encode_str("set",JSON.stringify(data.field),0),function (res) {
+                layer.msg('保存完毕');
+            },"POST",false);    
+        });  
+       
+        
+  
+        /* 渲染表格 */
+        var insTb = tableX.render({
+            elem: '#dataTable',
+            url: getProjectUrl() + 'admin/badip?token=' + CoreUtil.getStok("token")  + 	'&time=' + Date.parse(new Date()),
+            page: false,
+            parseData: function(res){ //res 即为原始返回的数据
+					    return {
+					      "code": res.error_code, //解析接口状态
+					      "msg": res.message, //解析提示文本
+					      "count": res.total, //解析数据长度
+					      "data": res.result //解析数据列表
+					    };
+					  },
+            toolbar: ['<p>',
+                '<button lay-event="add" perm-show="sysPos:add" class="layui-btn layui-btn-sm icon-btn"><i class="layui-icon">&#xe654;</i>添加</button>&nbsp;',               
+                '</p>'].join(''),
+            cellMinWidth: 100,
+            cols: [
+                [
+                    {type: 'checkbox'},
+                    {type: "numbers", title: '序号'},       
+                    {field: 'ipaddr', title: '永久封禁的IP范围'},
+                    {
+                            field: 'enabled', align: 'center', sort: true,title: '是否启用',  event:'enabled',templet: function (item) {                          
+                                if (item.enabled === "on") {
+                                    return '  <input type="checkbox" lay-skin="switch"  lay-text="启用|禁用" checked >';
+                                }
+                                else {
+                                    return '  <input type="checkbox" lay-skin="switch"  lay-text="启用|禁用" >';
+                                }
+                            }
+                    },                        
+                    {title: '操作', toolbar: '#tableBar', align: 'center', width: 200, minWidth: 200}
+                ]
+            ],
+            done: function(res, curr, count) {
+                xnUtil.tableDone(insTb, res, curr, count);
+            }
+        });
+
+
+        /* 表格工具条点击事件 */
+        table.on('tool(dataTable)', function (obj) {        	  
+        	   var data = obj.data;
+        	   rowindex =  $(obj.tr).attr("data-index");
+        	   
+        	   if (obj.event === 'enabled') {                  
+                   if (data.enabled == "on") 
+                       data.enabled = "off";
+                   else
+                   	   data.enabled = "on";                 
+                   	                 
+                   CoreUtil.sendAjax("/admin/badip?token=" + CoreUtil.getStok("token"), CoreUtil.encode_str("set",JSON.stringify(data),rowindex), function (res) {
+                      form.render(); 
+                   }, "POST", false, function (res) {
+                     layer.msg("抱歉！编辑失败！");
+                   });
+                   window.location.reload();
+                    //insTb.reload();
+             }
+                           
+            /* 删除 */
+            if (obj.event === 'delete') {
+                layer.confirm('确定要删除该条数据吗？', {
+                    skin: 'layui-layer-admin',
+                    shade: .1
+                }, function () {
+         
+                	  CoreUtil.sendAjax("/admin/badip?token=" + CoreUtil.getStok("token"), CoreUtil.encode_str("delete",JSON.stringify(data),rowindex), function (res) {
+                        layer.msg('删除成功', {icon: 1, time: 2000}, function () {
+                            insTb.reload();
+                            window.location.reload();
+                        });
+                    }, "POST", false, function (res) {
+                        layer.msg("抱歉！删除失败！");
+                    });              
+                });
+            }
+            /* 编辑 */
+            if (obj.event === 'edit') {
+                showAddOrUpdateModel(obj.data);
+            }
+        });
+
+        /* 表格头工具栏点击事件 */
+        table.on('toolbar(dataTable)', function (obj) {
+            if (obj.event === 'add') { // 添加
+            	  if (table.cache["dataTable"].length >= 10) {
+            	  	layer.msg('已达到最大条数限制，不能添加！', {icon: 1, time: 2000}, function () {
+                       
+                        });
+            	  
+            	  	    return;            	    
+            	  }
+                showAddOrUpdateModel();
+            }
+            if (obj.event === 'delete') { // 删除
+                var checkRows = table.checkStatus('dataTable');
+                if (checkRows.data.length === 0) {
+                    notice.msg('请选择要操作的数据', {icon: 2});
+                    return;
+                }
+                layer.confirm('确定要操作该数据吗？', {
+                    skin: 'layui-layer-admin',
+                    shade: .1
+                }, function () {
+                    var ids = checkRows.data.map(function (d) {
+                        return {"id": d.id};
+                    });
+                    admin.req(getProjectUrl() + 'sysPos/delete', JSON.stringify(ids), function(res){
+                        layer.msg(res.message, {icon: 1, time: 1000}, function () {
+                            insTb.reload();
+                        });
+                    }, 'post');
+                });
+            }
+        });
+
+        // 显示表单弹窗
+        function showAddOrUpdateModel(data) {
+        	  layui.sessionData('rowindex', {key: 'rowindex',value: rowindex});
+            var layIndex = admin.open({
+                title: (data ? '修改' : '添加') + 'IP',
+                area: ['600px','250px'],
+                url: getProjectUrl() + 'html/form_xdp_ip_black.html?id=' + rowindex,
+                data: { data: data },     // 传递数据到表单页面
+                end: function () {
+                    var layerData = admin.getLayerData(layIndex, 'formOk');
+                    if (layerData) {  // 判断表单操作成功标识
+                        insTb.reload();  // 成功刷新表格
+                        window.location.reload();
+                    }
+                },
+                success: function (layero, dIndex) {
+                    // 弹窗超出范围不出现滚动条
+                    $(layero).children('.layui-layer-content').css('overflow', 'visible');
+                    $(layero).find('[lay-submit]').focus();
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>

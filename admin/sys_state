@@ -1,0 +1,56 @@
+{
+ "id":1,
+ "result":[{
+       "normal": [{
+         "py_isup":"true",
+        "ipaddr":"8.8.8.8",
+         "t_type":"ethernet",
+         "t_isup":"internet",
+         "t_name":"WAN",
+         "t_linktype":"static",
+         "num":"0"
+        },{
+         "py_isup":"true",
+        "ipaddr":"8.8.8.8",
+         "t_type":"ethernet",
+         "t_isup":"connect",
+         "t_name":"LAN1",
+         "t_linktype":"static",
+         "num":"0"
+        },{
+         "py_isup":"true",
+        "ipaddr":"8.8.8.8",
+         "t_type":"ethernet",
+         "t_isup":"disconnect",
+         "t_name":"LAN2",
+         "t_linktype":"static",
+         "num":"0"
+        },{
+         "py_isup":"true",
+        "ipaddr":"8.8.8.8",
+         "t_type":"ethernet",
+         "t_isup":"disconnect",
+         "t_name":"LAN3",
+         "t_linktype":"static",
+         "num":"0"
+        },{
+         "py_isup":"true",
+        "ipaddr":"8.8.8.8",
+         "t_type":"ethernet",
+         "t_isup":"connect",
+         "t_name":"LAN4",
+         "t_linktype":"static",
+         "num":"0"
+        }]
+        }, [{
+         "tx_bps_ngo":"8888",
+         "rx_bps_ngo":"8888",
+         "rx_bps":"8888",
+         "tx_bps":"8888",
+         "interface":"WAN"
+	}], {
+         "cpu":"18",
+         "mem":"58"
+}],
+"error_code":"0"
+}

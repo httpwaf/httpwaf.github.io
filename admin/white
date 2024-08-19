@@ -1,0 +1,8 @@
+{
+	"id": 1,
+		"others": {                  
+		"max_rules": 30            
+	}, 
+	"result":[{"textname":"白名单测试","url":"/hihttps/whitelist28"},{"textname":"测试2","url":"/hihttps/aaa/"}], 
+	"error_code": "0"
+}

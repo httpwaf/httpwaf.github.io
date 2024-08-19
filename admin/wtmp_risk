@@ -1,0 +1,36 @@
+{
+ "id":1,
+ "result":[{
+"src_ip":"222.209.119.183",
+"time":"2021-12-28 00:47:48",
+"user":"root",
+"geoip":"四川省成都市",
+"country":"35",
+"province":"21",
+"ruleid":"9",
+"msg":"凌晨登录",
+"risk":"危急"
+},{
+"src_ip":"199.247.0.148",
+"time":"2022-02-24 17:44:29",
+"user":"root",
+"geoip":"加拿大",
+"country":"31",
+"province":"0",
+"ruleid":"7",
+"msg":"异地登录",
+"risk":"高"
+},{
+"src_ip":"192.168.1.173",
+"time":"2022-09-22 11:03:10",
+"user":"root",
+"geoip":"局域网",
+"country":"0",
+"province":"0",
+"ruleid":"7",
+"msg":"异地登录",
+"risk":"高"
+}],
+"totalRows":3,
+"error_code":"0"
+}

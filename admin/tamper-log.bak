@@ -1,0 +1,98 @@
+{
+ "id":1,
+ "result":[{
+"file":"/etc/resolv.conf.V46E31",
+"type":"修改",
+"time":"2023-04-10 09:01:29  "}
+,{
+"file":"/etc/resolv.conf.V46E31",
+"type":"创建",
+"time":"2023-04-10 09:01:29  "}
+,{
+"file":"/etc/resolv.conf.AFMJ31",
+"type":"修改",
+"time":"2023-04-10 09:01:27  "}
+,{
+"file":"/etc/resolv.conf.AFMJ31",
+"type":"创建",
+"time":"2023-04-10 09:01:27  "}
+,{
+"file":"/etc/resolv.conf.552A31",
+"type":"修改",
+"time":"2023-04-10 09:01:27  "}
+,{
+"file":"/etc/resolv.conf.552A31",
+"type":"创建",
+"time":"2023-04-10 09:01:27  "}
+,{
+"file":"/etc/resolv.conf.D0L221",
+"type":"修改",
+"time":"2023-04-10 09:01:27  "}
+,{
+"file":"/etc/resolv.conf.D0L221",
+"type":"创建",
+"time":"2023-04-10 09:01:27  "}
+,{
+"file":"/etc/.resolv.conf.swp",
+"type":"删除",
+"time":"2023-04-07 10:38:06  "}
+,{
+"file":"/etc/.resolv.conf.swp",
+"type":"修改",
+"time":"2023-04-07 10:38:06  "}
+,{
+"file":"/etc/resolv.conf~",
+"type":"删除",
+"time":"2023-04-07 10:38:06  "}
+,{
+"file":"/etc/resolv.conf",
+"type":"修改",
+"time":"2023-04-07 10:38:06  "}
+,{
+"file":"/etc/resolv.conf",
+"type":"创建",
+"time":"2023-04-07 10:38:06  "}
+,{
+"file":"/etc/4913",
+"type":"删除",
+"time":"2023-04-07 10:38:06  "}
+,{
+"file":"/etc/4913",
+"type":"修改",
+"time":"2023-04-07 10:38:06  "}
+,{
+"file":"/etc/4913",
+"type":"创建",
+"time":"2023-04-07 10:38:06  "}
+,{
+"file":"/etc/.resolv.conf.swp",
+"type":"创建",
+"time":"2023-04-07 10:38:02  "}
+,{
+"file":"/etc/.resolv.conf.swp",
+"type":"删除",
+"time":"2023-04-07 10:38:02  "}
+,{
+"file":"/etc/.resolv.conf.swp",
+"type":"修改",
+"time":"2023-04-07 10:38:02  "}
+,{
+"file":"/etc/.resolv.conf.swx",
+"type":"删除",
+"time":"2023-04-07 10:38:02  "}
+,{
+"file":"/etc/.resolv.conf.swx",
+"type":"修改",
+"time":"2023-04-07 10:38:02  "}
+,{
+"file":"/etc/.resolv.conf.swx",
+"type":"创建",
+"time":"2023-04-07 10:38:02  "}
+,{
+"file":"/etc/.resolv.conf.swp",
+"type":"创建",
+"time":"2023-04-07 10:38:02  "}
+],
+"totalRows":0,
+"error_code":"0"
+}

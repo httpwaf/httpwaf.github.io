@@ -1,0 +1,14 @@
+{
+ "id":1,
+ "result":[{
+"src_ip":"192.168.1.173",
+"ipnum":"10",
+"cmdnum":"0",
+"geoip":"局域网",
+"country":"0",
+"province":"0",
+"risk":"低"
+}],
+"totalRows":1,
+"error_code":"0"
+}

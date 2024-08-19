@@ -1,0 +1,12 @@
+{
+ "code":0,
+  "msg": "",
+  "result":{"syn":"90","bytes_in":"6","bytes_out":"50","packets_in":"5357","packets_out":"19432"},
+ "test":[],
+"totalRows":0,
+"tcp":"0",
+"udp":"0",
+"icmp":"0",
+"date":"2023-06-14",
+"error_code":"0"
+}

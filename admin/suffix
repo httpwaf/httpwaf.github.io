@@ -1,0 +1,80 @@
+{
+ "id":1,
+ "result":[{
+  "server":"127.0.0.1",
+  "textname":".js",
+  "url":"8297",
+  "ipcount":"12386"
+},{
+  "server":"127.0.0.1",
+  "textname":".json",
+  "url":"4184",
+  "ipcount":"12386"
+},{
+  "server":"127.0.0.1",
+  "textname":".woff2",
+  "url":"3998",
+  "ipcount":"12381"
+},{
+  "server":"127.0.0.1",
+  "textname":".gif",
+  "url":"875",
+  "ipcount":"12381"
+},{
+  "server":"127.0.0.1",
+  "textname":".txt",
+  "url":"1078",
+  "ipcount":"12383"
+},{
+  "server":"127.0.0.1",
+  "textname":".ico",
+  "url":"6011",
+  "ipcount":"12386"
+},{
+  "server":"127.0.0.1",
+  "textname":".html",
+  "url":"7782",
+  "ipcount":"12386"
+},{
+  "server":"127.0.0.1",
+  "textname":".eot",
+  "url":"105",
+  "ipcount":"12375"
+},{
+  "server":"127.0.0.1",
+  "textname":".png",
+  "url":"6808",
+  "ipcount":"12386"
+},{
+  "server":"127.0.0.1",
+  "textname":".css",
+  "url":"6473",
+  "ipcount":"12387"
+},{
+  "server":"127.0.0.1",
+  "textname":".ttf",
+  "url":"101",
+  "ipcount":"12375"
+},{
+  "server":"127.0.0.1",
+  "textname":".svg",
+  "url":"11",
+  "ipcount":"12375"
+},{
+  "server":"127.0.0.1",
+  "textname":".gz",
+  "url":"7",
+  "ipcount":"12375"
+},{
+  "server":"127.0.0.1",
+  "textname":".woff",
+  "url":"109",
+  "ipcount":"12375"
+},{
+  "server":"127.0.0.1",
+  "textname":".jpg",
+  "url":"3988",
+  "ipcount":"12386"
+}],
+"error_code":"0"
+}

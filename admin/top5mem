@@ -1,0 +1,32 @@
+{
+ "id":1,
+ "result":[{
+  "procname":"/hihttps/bin/webserver",
+  "cpu":"0.0",
+  "mem":"2.5",
+  "memkb":"47176"
+},{
+  "procname":"/hissh/bin/log2save",
+  "cpu":"0.0",
+  "mem":"2.1",
+  "memkb":"39740"
+},{
+  "procname":"/hihttps/bin/hihttps",
+  "cpu":"0.0",
+  "mem":"1.5",
+  "memkb":"28436"
+},{
+  "procname":"/hihttps/bin/logcenter",
+  "cpu":"0.0",
+  "mem":"1.3",
+  "memkb":"24028"
+},{
+  "procname":"/hissh/bin/hisshfw",
+  "cpu":"0.0",
+  "mem":"1.1",
+  "memkb":"21448"
+}],
+"totalRows":5,
+"date":"2023-06-12",
+"error_code":"0"
+}

@@ -1,0 +1,64 @@
+{
+	"id": 1,
+	"others": {
+		"max_rules": 20
+	},
+	"result": [{"name":"2020-02-01+10:22:22","group_name":"policy_1","service_type":"SQL+Injection+Attack","src_ipgroup":"192.168.99.1","src_ipstart":"192.168.99.1","src_ipend":"192.168.99.2","dst_ipgroup":"SQL注入","interfaces":"1000","timeobj":"policy_time_1","time_mode":"input","state":"on","index":1,"slots":"{\"wed\":[[\"10:11\",\"10:12\"]]}"},{
+	  "interfaces": "1001",
+		"index": 1,
+		"group_name": "policy_1",
+		"service_type": "XSS Attack Detected via libinjection",
+		"slots": "{\u0022wed\u0022:[[\u002210:11\u0022,\u002210:12\u0022]]}",
+		"src_ipstart": "192.168.99.1",
+		"src_ipgroup": "192.168.99.1",
+		"time_mode": "input",
+		"dst_ipgroup": "XSS攻击",
+		"name": "2020-02-01 10:25:20",
+		"timeobj": "policy_time_1",
+		"state": "on",
+		"src_ipend": "192.168.99.2"
+	},{
+	  "interfaces": "1002",
+		"index": 1,
+		"group_name": "policy_1",
+		"service_type": "发现使用NMAP黑客工具扫描",
+		"slots": "{\u0022wed\u0022:[[\u002210:11\u0022,\u002210:12\u0022]]}",
+		"src_ipstart": "192.168.99.1",
+		"src_ipgroup": "192.168.99.1",
+		"time_mode": "input",
+		"dst_ipgroup": "恶意扫描",
+		"name": "2020-02-01 10:28:45",
+		"timeobj": "policy_time_1",
+		"state": "on",
+		"src_ipend": "192.168.99.2"
+	},{
+	  "interfaces": "1003",
+		"index": 1,
+		"group_name": "policy_1",
+		"service_type": "密码输入异常，可能暴力破解",
+		"slots": "{\u0022wed\u0022:[[\u002210:11\u0022,\u002210:12\u0022]]}",
+		"src_ipstart": "192.168.99.1",
+		"src_ipgroup": "192.168.99.1",
+		"time_mode": "input",
+		"dst_ipgroup": "DDOS",
+		"name": "2020-02-01 10:28:45",
+		"timeobj": "policy_time_1",
+		"state": "on",
+		"src_ipend": "192.168.99.2"
+	},{
+		"interfaces": "1005",
+		"index": 1,
+		"group_name": "policy_1",
+		"service_type": "未知攻击",
+		"slots": "{\u0022wed\u0022:[[\u002210:11\u0022,\u002210:12\u0022]]}",
+		"src_ipstart": "192.168.99.1",
+		"src_ipgroup": "192.168.99.2",
+		"time_mode": "input",
+		"dst_ipgroup": "机器学习",
+		"name": "2020-02-01 10:35:42",
+		"timeobj": "policy_time_1",
+		"state": "on",
+		"src_ipend": "192.168.99.2"
+	}],
+	"error_code": "0"
+}

@@ -1,0 +1,120 @@
+<!-- 注意这里不需要写`<html><body>`这些东西，它是一个html片段，不是完整的html页面 -->
+<form id="addOrUpdateForm" lay-filter="addOrUpdateForm" class="layui-form model-form">
+    <input name="name" type="hidden"/>
+    <input name="enabled" type="hidden" value="on"/>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label layui-form-required">规则文件</label>
+        <div class="layui-input-inline" style="width: 370px">
+            <input name="members" id="members" class="layui-input" placeholder="请先点击上传文件" readonly="true" lay-verType="tips" lay-verify="required" required/>
+        </div>
+         <div class="layui-input-block">
+                  <button id="file-btn-upload" type="button" class="layui-btn layui-btn-sm layui-btn-normal icon-btn">
+                    <i class="layui-icon">&#xe681;</i>上传文件
+                 </button>
+       </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label layui-form-required">规则名称</label>
+        <div class="layui-input-block">
+            <input name="textname" class="layui-input" placeholder="请输入规则名称" lay-verType="tips" lay-verify="required" required/>
+        </div>
+    </div>
+  
+  
+    <div class="layui-form-item">
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-block">
+            <textarea name="comment" placeholder="请输入备注" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item text-right">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+        <button class="layui-btn" lay-filter="formSubmitBtn" lay-submit>保存</button>
+    </div>
+</form>
+<script src="/assets/js/common.js"></script>
+<script>
+    layui.use(['layer', 'form', 'admin', 'xnUtil'], function () {
+        var $ = layui.jquery;
+        var layer = layui.layer;
+        var form = layui.form;
+        var admin = layui.admin;   
+        var editData = admin.getLayerData('#addOrUpdateForm').data;
+        var rowindex = layui.sessionData('rowindex').rowindex; 
+        var upload = layui.upload;
+        var filename = "";
+        
+         // 上传
+        upload.render({
+            elem: '#file-btn-upload',
+            accept: 'file',
+            exts: 'conf|rules|data',
+            url: getProjectUrl() + 'upload',
+            choose: function(obj) {
+            	//var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+              //读取本地文件
+               obj.preview(function(index, file, result){
+               	   filename = file.name;
+               	   $("#members").val(file.name);  
+               });
+            	
+            },
+            done: function(res){
+                handleNetworkError(res);
+                layer.msg('上载规则完毕', {icon: 1, time: 1000}, function () {
+                     
+                });
+               
+            }
+        });  
+        
+         /*/监听指定开关
+        form.on('switch(switch)', function(){
+            $("#enabled").attr('type', 'hidden').val(this.checked ? "on" : "off");                   
+        });  */
+        
+        
+        form.val('addOrUpdateForm', editData);
+        
+        if (editData) {
+            $("#file-btn-upload").hide(); 
+        }
+        
+        /*if (editData.enabled == "on") {
+            $("#enabled").prop('checked', true);
+            $("#enabled").attr('type', 'checkbox').val("on"); 
+        } else {     
+        	  $("#enabled").prop('checked', false);
+            $("#enabled").attr('type', 'checkbox').val("off"); 
+        } */   
+            
+        form.render();
+        
+        // 表单提交事件
+        form.on('submit(formSubmitBtn)', function (data) {
+            layer.load(2);
+            var url = editData ? getProjectUrl() + 'sysPos/edit' : getProjectUrl() + 'sysPos/add';
+            var mtd = editData ? 'set' : 'add';
+            url = getProjectUrl() + 'admin/rules?token=' + CoreUtil.getStok("token");
+ 
+            CoreUtil.sendAjax(url, CoreUtil.encode_str(mtd,JSON.stringify(data.field),rowindex), function (res) { 
+                 admin.putLayerData('formOk', true, '#addOrUpdateForm');
+                 admin.closeDialog('#addOrUpdateForm');                 
+            }, "POST", false, function (res) {            	
+                layer.msg("登录失败！");
+            });
+            
+            /* 
+            admin.req(url, JSON.stringify(data.field), function(res){
+                layer.msg(res.message, {icon: 1, time: 1000}, function () {
+                    admin.putLayerData('formOk', true, '#addOrUpdateForm');
+                    admin.closeDialog('#addOrUpdateForm');
+                });
+            }, 'post');*/
+            return false;
+        });
+
+    });
+</script>

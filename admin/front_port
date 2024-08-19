@@ -1,0 +1,14 @@
+{ 
+"id":1, 
+ "result":{ 
+    "ssh_port_switch":"on", 
+    "port_list":[ "53", "67", "500", "1701", "1723", "1900", "2060", "4500", "5246", "5247", "20002", "33400", "37670", "52414" ], 
+    "ssh_port":"33400", 
+    "https_port":"443", 
+    "web_timeout":60, 
+    "auth_enable":"off", 
+    "auth_port":"1864", 
+    "https_port_switch":"on", 
+    "http_port":"0" }, 
+"error_code":"0" 
+}

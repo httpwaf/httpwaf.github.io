@@ -1,0 +1,8 @@
+{
+	"id": 1,
+		"others": {                  
+		"max_rules": 3            
+	}, 
+	"result":[{"textname":"主服务器","mac":"12.0.65.118","http_port":"80"},{"textname":"备用服务器","mac":"12.0.65.117","http_port":"80"}], 
+	"error_code": "0"
+}

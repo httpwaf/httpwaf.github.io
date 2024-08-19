@@ -1,0 +1,5 @@
+{ 
+"id":1, 
+ "result":{"http_port":"80","https_port_switch":"on","https_port":"443","auth_port":"1863","web_timeout":"60","ssh_port_switch":"on","ssh_port":"1864"}, 
+"error_code":"0" 
+}

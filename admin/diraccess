@@ -1,0 +1,8 @@
+{
+	"id": 1,
+	"others": {
+		"max_rules": 1
+	},
+	"result": [{"dir":"/hihttpsadmin/","note":"系统管理员目录","ipaddr":"192.168.1.88/24","enabled":"on"}],
+	"error_code": "0"
+}

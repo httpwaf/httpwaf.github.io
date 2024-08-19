@@ -1,0 +1,8 @@
+{
+	"id": 1,
+	"others": {
+		"max_rules": 3
+	},
+	"result": [{"enabled":"off","dir":"/usr/share/nginx/html/","note":"WEB静态页面目录"},{"enabled":"on","dir":"/etc/","note":"aa"}],
+	"error_code": "0"
+}

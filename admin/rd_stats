@@ -1,0 +1,22 @@
+{
+ "code":0,
+  "msg": "",
+  "button": "button120",
+  "yname":"（K）",
+  "yname2":"K",
+  "top5_time":"2023-06-14 08:47:12",
+  "top5_date":"2023-06-14",
+  "xdata1":[],
+  "xdata2":[],
+  "cpu":[],
+  "mem":[],
+  "load_average1":[],
+  "load_average5":[],
+  "tcp_estab":[],
+  "dk_drive_rblk":[],
+  "dk_drive_wblk":[],
+  "rx_bytes":[],
+  "tx_bytes":[],
+  "count":0,
+  "error_code":"0"
+}

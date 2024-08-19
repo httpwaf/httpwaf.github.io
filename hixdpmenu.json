@@ -1,0 +1,219 @@
+{
+	"success": true,
+	"code": 200,
+	"message": "请求成功",
+	"data": {
+		"id": "1265476890672672808",
+		"account": "admin",
+		"nickName": "系统管理员",
+		"name": "系统管理员",
+		"avatar": "1366687498650009602",
+		"birthday": "0",
+		"sex": 1,
+		"email": "",
+		"phone": "",
+		"tel": "",
+		"adminType": 1,
+		"lastLoginIp": "",
+		"lastLoginTime": "",
+		"lastLoginAddress": "-",
+		"lastLoginBrowser": "Chrome",
+		"lastLoginOs": "Windows 11",
+		"loginEmpInfo": {
+			"jobNum": null,
+			"orgId": null,
+			"orgName": null,
+			"extOrgPos": [],
+			"positions": []
+		},
+		"apps": [],
+		"roles": [],
+		"permissions": [],
+		"menus": [{
+			"code": "system",
+			"value": [{
+				"id": "1264622039642255311",
+				"parentId": "0",
+				"title": "主页面板",
+				"value": "javascript:;",
+				"icon": "layui-icon-home",
+				"weight": 1,
+				"children": [{
+				  "id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "首页",
+					"value": "/sshhtml/other/home_hiddos.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				}],
+				"pid": "0"
+			},{
+				"id": "1264622039642255311",
+				"parentId": "0",
+				"title": "流量数据",
+				"value": "javascript:;",
+				"icon": "layui-icon-chart",
+				"weight": 1,
+				"children": [{
+				  "id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "流量详情",
+					"value": "/sshhtml/other/home_network.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				},{
+					"id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "流量排名",
+					"value": "/prochtml/top100.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				}],
+				"pid": "0"
+			},{
+				"id": "1264622039642255311",
+				"parentId": "0",
+				"title": "XDP防火墙",
+				"value": "javascript:;",
+				"icon": "layui-icon-fonts-del",
+				"weight": 1,
+				"children": [{
+					"id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "XDP规则",
+					"value": "/html/xdp_filter.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				}],
+				"pid": "0"
+			},{
+				"id": "1264622039642255311",
+				"parentId": "0",
+				"title": "抗DDOS",
+				"value": "javascript:;",
+				"icon": "layui-icon-fonts-del",
+				"weight": 1,
+				"children": [{
+					"id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "防护设置",
+					"value": "/prochtml/home_ddos.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				}],
+				"pid": "0"
+			},{
+				"id": "1264622039642255311",
+				"parentId": "0",
+				"title": "黑白名单",
+				"value": "javascript:;",
+				"icon": "layui-icon-app",
+				"weight": 1,
+				"children": [{
+					"id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "IP白名单",
+					"value": "/html/ip_white.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				},{
+					"id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "IP黑名单",
+					"value": "/html/ip_black.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				}],
+				"pid": "0"
+			},{
+				"id": "1264622039642255311",
+				"parentId": "0",
+				"title": "日志查看",
+				"value": "javascript:;",
+				"icon": "layui-icon-log",
+				"weight": 1,
+				"children": [{
+					"id": "1264622039642255332",
+					"parentId": "1264622039642255311",
+					"title": "封禁日志",
+					"value": "/prochtml/ip_ddos_log.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "1264622039642255311"
+				}],
+				"pid": "0"
+			},{
+				"id": "12646220396422553419",
+				"parentId": "0",
+				"title": "系统管理",
+				"value": "javascript:;",
+				"icon": "layui-icon-util",
+				"weight": 2,
+				"children": [{
+					"id": "12646220396422553519",
+					"parentId": "12646220396422553419",
+					"title": "远程管理",
+					"value": "/sshhtml/remote.html",
+					"icon": null,
+					"weight": 3,
+					"children": [],
+					"pid": "12646220396422553419"
+				}, {
+					"id": "12646220396422556019",
+					"parentId": "12646220396422553419",
+					"title": "系统重启",
+					"value": "/sshhtml/reboot.html",
+					"icon": null,
+					"weight": 5,
+					"children": [],
+					"pid": "12646220396422553419"
+				}],
+				"pid": "0"
+			},{
+				"id": "12646220396422553419",
+				"parentId": "0",
+				"title": "更多功能",
+				"value": "/prochtml/pay_more.html",
+				"icon": "layui-icon-engine",
+				"weight": 2,
+				"pid": "0"
+			}]
+		}, {
+			"code": "systool",
+			"value": [{
+				"id": "1338864007892807681",
+				"parentId": "0",
+				"title": "代码生成",
+				"value": "/codeGenerate/index.html",
+				"icon": "layui-icon-app",
+				"weight": 1,
+				"children": [],
+				"pid": "0"
+			}]
+		}],
+		"dataScopes": [],
+		"tenants": null,
+		"enabled": true,
+		"authorities": [],
+		"password": null,
+		"username": "admin",
+		"accountNonExpired": true,
+		"accountNonLocked": true,
+		"credentialsNonExpired": true
+	}
+}

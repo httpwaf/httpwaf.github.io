@@ -1,0 +1,18 @@
+{
+	"id": 1,
+	"result": {
+		"end_month": "Nov",
+		"start_hour": "2am",
+		"end_week": "1st",
+		"date": "04/01/2020",
+		"start_month": "May",
+		"end_hour": "2am",
+		"time": "17:26:27",
+		"start_day": "Sun",
+		"dst_status": "",
+		"dst_enable": "on",
+		"start_week": "2nd",
+		"end_day": "Sun"
+	},
+	"error_code": "0"
+}
